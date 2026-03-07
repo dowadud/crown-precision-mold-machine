@@ -1,3 +1,9 @@
+# Large source assets (kept locally, not in repo)
+*.pptx
+*.pdf
+crown precision mold & machine logo.JPG
+crown-precision-logo.jpg
+
 # dependencies
 /node_modules
 /.pnp
