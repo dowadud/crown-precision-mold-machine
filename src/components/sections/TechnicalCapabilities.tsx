@@ -91,8 +91,8 @@ export default function TechnicalCapabilities() {
           <FadeIn delay={0.2} direction="left">
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
-                src="/images/robotic-ai-machining.jpg"
-                alt="Robotic AI-driven precision machining system"
+                src="/images/tire-mold-cnc.jpg"
+                alt="CNC milling head precision machining a tire mold component"
                 fill
                 className="object-cover object-center"
                 quality={85}
@@ -104,11 +104,11 @@ export default function TechnicalCapabilities() {
                 <div className="flex items-center gap-3 mb-1">
                   <div className="h-px w-6 bg-gold" />
                   <span className="font-heading text-[10px] uppercase tracking-[0.25em] text-gold">
-                    Advanced Automation
+                    CNC Precision Machining
                   </span>
                 </div>
                 <p className="text-steel/70 text-xs">
-                  Robotic machining arms + AI-driven defect detection
+                  High-precision mold cutting — tight tolerances, engineered to spec
                 </p>
               </div>
             </div>
