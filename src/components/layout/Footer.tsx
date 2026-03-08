@@ -25,12 +25,12 @@ const navLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[#0B0B0D] border-t border-white/[0.06]">
-      {/* Gold line */}
       <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-40" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
+
+          {/* Brand + Contact */}
           <div className="lg:col-span-1">
             <div className="relative w-[180px] h-[56px] mb-5">
               <Image
@@ -44,15 +44,58 @@ export default function Footer() {
               Specialized tire mold services for global manufacturers. Precision
               repair, refurbishment, and lifecycle support.
             </p>
+
             <div className="space-y-3">
+              {/* Address */}
               <div className="flex items-start gap-3">
-                <MapPin size={14} className="text-gold mt-0.5 shrink-0" />
-                <p className="text-metal text-xs leading-relaxed">
-                  301 S McDowell St Suite 125-1671
-                  <br />
-                  Charlotte, NC 28204
-                </p>
+                <MapPin size={13} className="text-gold mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-metal text-xs leading-relaxed">
+                    Crown Precision Mold and Machine
+                  </p>
+                  <p className="text-metal text-xs leading-relaxed">
+                    301 S McDowell St
+                  </p>
+                  <p className="text-metal text-xs leading-relaxed">
+                    Suite 125-1671
+                  </p>
+                  <p className="text-metal text-xs leading-relaxed">
+                    Charlotte, NC 28204
+                  </p>
+                </div>
               </div>
+
+              {/* Phone */}
+              <a
+                href="tel:3053332660"
+                className="flex items-center gap-3 group"
+              >
+                <Phone size={13} className="text-gold shrink-0" />
+                <span className="text-metal text-xs hover:text-gold transition-colors duration-200">
+                  305.333.2660
+                </span>
+              </a>
+
+              {/* Emails */}
+              <a
+                href="mailto:marcorestrepo@cpmandm.com"
+                className="flex items-center gap-3 group"
+              >
+                <Mail size={13} className="text-gold shrink-0" />
+                <span className="text-metal text-xs hover:text-gold transition-colors duration-200 break-all">
+                  marcorestrepo@cpmandm.com
+                </span>
+              </a>
+
+              <a
+                href="mailto:admin@cpmandm.com"
+                className="flex items-center gap-3 group"
+              >
+                <Mail size={13} className="text-gold shrink-0" />
+                <span className="text-metal text-xs hover:text-gold transition-colors duration-200">
+                  admin@cpmandm.com
+                </span>
+              </a>
             </div>
           </div>
 
@@ -96,18 +139,19 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact / CTA */}
+          {/* Get in Touch */}
           <div>
             <h4 className="font-heading font-bold uppercase tracking-widest text-xs text-gold mb-6">
               Get in Touch
             </h4>
             <p className="text-metal text-sm leading-relaxed mb-6">
               Ready to extend your mold life and reduce production downtime?
-              Talk to our engineering team.
+              Talk to our engineering team today.
             </p>
+
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 font-heading font-bold text-xs uppercase tracking-widest px-6 py-3 bg-gold text-[#0B0B0D] hover:bg-gold-light transition-all duration-300 group"
+              className="inline-flex items-center gap-2 font-heading font-bold text-xs uppercase tracking-widest px-6 py-3 bg-gold text-[#0B0B0D] hover:bg-gold-light transition-all duration-300 group mb-6"
             >
               Request a Quote
               <ArrowUpRight
@@ -115,6 +159,30 @@ export default function Footer() {
                 className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
               />
             </Link>
+
+            <div className="space-y-2 mt-6 pt-6 border-t border-white/[0.06]">
+              <a
+                href="tel:3053332660"
+                className="flex items-center gap-2 text-metal text-xs hover:text-gold transition-colors duration-200"
+              >
+                <Phone size={12} className="text-gold" />
+                305.333.2660
+              </a>
+              <a
+                href="mailto:marcorestrepo@cpmandm.com"
+                className="flex items-center gap-2 text-metal text-xs hover:text-gold transition-colors duration-200 break-all"
+              >
+                <Mail size={12} className="text-gold shrink-0" />
+                marcorestrepo@cpmandm.com
+              </a>
+              <a
+                href="mailto:admin@cpmandm.com"
+                className="flex items-center gap-2 text-metal text-xs hover:text-gold transition-colors duration-200"
+              >
+                <Mail size={12} className="text-gold shrink-0" />
+                admin@cpmandm.com
+              </a>
+            </div>
           </div>
         </div>
 
@@ -124,7 +192,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Crown Precision Mold & Machine. All rights reserved.
           </p>
           <p className="text-metal/50 text-xs">
-            Precision Tire Mold Services · Charlotte, NC
+            Precision Tire Mold Services · Charlotte, NC · 305.333.2660
           </p>
         </div>
       </div>

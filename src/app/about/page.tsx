@@ -74,7 +74,7 @@ const milestones = [
 
 export default function AboutPage() {
   return (
-    <main className="pt-20 bg-[#0B0B0D]">
+    <main className="pt-[116px] bg-[#0B0B0D]">
       {/* Hero with full-bleed image */}
       <section className="relative h-[60vh] min-h-[480px] flex items-end overflow-hidden">
         <Image

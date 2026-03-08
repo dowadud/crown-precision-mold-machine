@@ -74,7 +74,7 @@ const industries = [
 
 export default function IndustriesPage() {
   return (
-    <main className="pt-20 bg-[#0B0B0D]">
+    <main className="pt-[116px] bg-[#0B0B0D]">
       {/* Hero with image */}
       <section className="relative h-[55vh] min-h-[420px] flex items-end overflow-hidden">
         <Image

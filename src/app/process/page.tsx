@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ProcessPage() {
   return (
-    <main className="pt-20 bg-[#0B0B0D]">
+    <main className="pt-[116px] bg-[#0B0B0D]">
       {/* Hero */}
       <section className="py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0B0B0D] via-[#111318] to-[#0B0B0D]" />

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -35,85 +35,142 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ y: -80, opacity: 0 }}
+        initial={{ y: -120, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           scrolled
-            ? "bg-[#0B0B0D]/95 backdrop-blur-md border-b border-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
-            : "bg-transparent"
+            ? "bg-[#0B0B0D]/95 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
+            : "bg-[#0B0B0D]/80 backdrop-blur-sm"
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-0 shrink-0 group">
-              <div className="relative w-[180px] h-[56px] md:w-[200px] md:h-[60px]">
-                <Image
-                  src="/images/logo.jpg"
-                  alt="Crown Precision Mold & Machine"
-                  fill
-                  className="object-contain object-left"
-                  priority
-                />
-              </div>
-            </Link>
-
-            {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "font-heading font-semibold text-xs uppercase tracking-[0.2em] transition-colors duration-200 relative group",
-                    pathname === link.href
-                      ? "text-gold"
-                      : "text-steel hover:text-smoke"
-                  )}
+        {/* ── Contact Bar ── */}
+        <div className="border-b border-white/[0.06] bg-charcoal/60">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+            <div className="flex items-center justify-between h-9">
+              {/* Left: phone + email */}
+              <div className="flex items-center gap-5">
+                <a
+                  href="tel:3053332660"
+                  className="flex items-center gap-1.5 text-metal hover:text-gold transition-colors duration-200 group"
                 >
-                  {link.label}
-                  <span
-                    className={cn(
-                      "absolute -bottom-1 left-0 h-px bg-gold transition-all duration-300",
-                      pathname === link.href
-                        ? "w-full"
-                        : "w-0 group-hover:w-full"
-                    )}
-                  />
-                </Link>
-              ))}
-            </nav>
+                  <Phone size={11} className="text-gold/70 group-hover:text-gold" />
+                  <span className="font-heading text-[11px] tracking-wider">
+                    305.333.2660
+                  </span>
+                </a>
 
-            {/* CTA */}
-            <div className="hidden lg:block">
+                <div className="h-3 w-px bg-white/10 hidden md:block" />
+
+                <a
+                  href="mailto:marcorestrepo@cpmandm.com"
+                  className="hidden md:flex items-center gap-1.5 text-metal hover:text-gold transition-colors duration-200 group"
+                >
+                  <Mail size={11} className="text-gold/70 group-hover:text-gold" />
+                  <span className="font-heading text-[11px] tracking-wider">
+                    marcorestrepo@cpmandm.com
+                  </span>
+                </a>
+
+                <div className="h-3 w-px bg-white/10 hidden xl:block" />
+
+                <a
+                  href="mailto:admin@cpmandm.com"
+                  className="hidden xl:flex items-center gap-1.5 text-metal hover:text-gold transition-colors duration-200 group"
+                >
+                  <Mail size={11} className="text-gold/70 group-hover:text-gold" />
+                  <span className="font-heading text-[11px] tracking-wider">
+                    admin@cpmandm.com
+                  </span>
+                </a>
+              </div>
+
+              {/* Right: CTA */}
               <Link
                 href="/contact"
-                className={cn(
-                  "font-heading font-bold text-xs uppercase tracking-[0.2em] px-6 py-3",
-                  "bg-gold text-[#0B0B0D] transition-all duration-300",
-                  "hover:bg-gold-light shadow-[0_4px_20px_rgba(200,154,61,0.3)]",
-                  "hover:shadow-[0_4px_28px_rgba(200,154,61,0.5)]"
-                )}
+                className="hidden sm:inline-flex items-center gap-1.5 font-heading font-bold text-[10px] uppercase tracking-[0.2em] text-gold hover:text-gold-light transition-colors duration-200 group"
               >
                 Request a Quote
+                <ArrowRight size={10} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
+          </div>
+        </div>
 
-            {/* Mobile Toggle */}
-            <button
-              className="lg:hidden text-steel hover:text-smoke transition-colors p-2"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
+        {/* ── Main Navigation ── */}
+        <div className={cn(
+          "border-b transition-all duration-500",
+          scrolled ? "border-white/[0.06]" : "border-transparent"
+        )}>
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+            <div className="flex items-center justify-between h-20">
+              {/* Logo */}
+              <Link href="/" className="flex items-center shrink-0">
+                <div className="relative w-[180px] h-[56px] md:w-[200px] md:h-[60px]">
+                  <Image
+                    src="/images/logo.jpg"
+                    alt="Crown Precision Mold & Machine"
+                    fill
+                    className="object-contain object-left"
+                    priority
+                  />
+                </div>
+              </Link>
+
+              {/* Desktop Nav */}
+              <nav className="hidden lg:flex items-center gap-8">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      "font-heading font-semibold text-xs uppercase tracking-[0.2em] transition-colors duration-200 relative group",
+                      pathname === link.href
+                        ? "text-gold"
+                        : "text-steel hover:text-smoke"
+                    )}
+                  >
+                    {link.label}
+                    <span
+                      className={cn(
+                        "absolute -bottom-1 left-0 h-px bg-gold transition-all duration-300",
+                        pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
+                      )}
+                    />
+                  </Link>
+                ))}
+              </nav>
+
+              {/* Desktop CTA */}
+              <div className="hidden lg:block">
+                <Link
+                  href="/contact"
+                  className={cn(
+                    "font-heading font-bold text-xs uppercase tracking-[0.2em] px-6 py-3",
+                    "bg-gold text-[#0B0B0D] transition-all duration-300",
+                    "hover:bg-gold-light shadow-[0_4px_20px_rgba(200,154,61,0.3)]",
+                    "hover:shadow-[0_4px_28px_rgba(200,154,61,0.5)]"
+                  )}
+                >
+                  Request a Quote
+                </Link>
+              </div>
+
+              {/* Mobile Toggle */}
+              <button
+                className="lg:hidden text-steel hover:text-smoke transition-colors p-2"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
           </div>
         </div>
       </motion.header>
 
-      {/* Mobile Menu */}
+      {/* ── Mobile Menu ── */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -121,7 +178,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#0B0B0D]/98 backdrop-blur-lg flex flex-col pt-24 px-8"
+            className="fixed inset-0 z-40 bg-[#0B0B0D]/98 backdrop-blur-lg flex flex-col pt-32 px-8"
           >
             <nav className="flex flex-col gap-6">
               {navLinks.map((link, i) => (
@@ -143,7 +200,29 @@ export default function Navbar() {
                 </motion.div>
               ))}
             </nav>
-            <div className="mt-10">
+
+            {/* Mobile contact info */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="mt-10 space-y-3 border-t border-white/[0.06] pt-8"
+            >
+              <a href="tel:3053332660" className="flex items-center gap-3 text-metal hover:text-gold transition-colors">
+                <Phone size={14} className="text-gold" />
+                <span className="font-heading text-sm tracking-wider">305.333.2660</span>
+              </a>
+              <a href="mailto:marcorestrepo@cpmandm.com" className="flex items-center gap-3 text-metal hover:text-gold transition-colors">
+                <Mail size={14} className="text-gold" />
+                <span className="font-heading text-sm tracking-wider">marcorestrepo@cpmandm.com</span>
+              </a>
+              <a href="mailto:admin@cpmandm.com" className="flex items-center gap-3 text-metal hover:text-gold transition-colors">
+                <Mail size={14} className="text-gold" />
+                <span className="font-heading text-sm tracking-wider">admin@cpmandm.com</span>
+              </a>
+            </motion.div>
+
+            <div className="mt-8">
               <Link
                 href="/contact"
                 className="inline-block font-heading font-bold text-sm uppercase tracking-widest px-8 py-4 bg-gold text-[#0B0B0D]"
