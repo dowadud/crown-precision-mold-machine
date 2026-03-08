@@ -142,29 +142,46 @@ export default function Navbar() {
                 ))}
               </nav>
 
-              {/* Desktop CTA */}
-              <div className="hidden lg:block">
+              {/* CTA — desktop full label, mobile compact */}
+              <div className="flex items-center gap-3">
+                {/* Mobile compact button */}
                 <Link
                   href="/contact"
                   className={cn(
-                    "font-heading font-bold text-xs uppercase tracking-[0.2em] px-6 py-3",
+                    "lg:hidden font-heading font-bold text-[10px] uppercase tracking-[0.18em] px-4 py-2.5",
                     "bg-gold text-[#0B0B0D] transition-all duration-300",
-                    "hover:bg-gold-light shadow-[0_4px_20px_rgba(200,154,61,0.3)]",
-                    "hover:shadow-[0_4px_28px_rgba(200,154,61,0.5)]"
+                    "hover:bg-gold-light shadow-[0_2px_12px_rgba(200,154,61,0.35)]",
+                    scrolled && "shadow-[0_2px_16px_rgba(200,154,61,0.5)]"
+                  )}
+                >
+                  Get a Quote
+                </Link>
+
+                {/* Desktop full button */}
+                <Link
+                  href="/contact"
+                  className={cn(
+                    "hidden lg:inline-flex items-center gap-2 font-heading font-bold text-xs uppercase tracking-[0.2em] px-6 py-3",
+                    "bg-gold text-[#0B0B0D] transition-all duration-300",
+                    "hover:bg-gold-light",
+                    scrolled
+                      ? "shadow-[0_4px_28px_rgba(200,154,61,0.55)]"
+                      : "shadow-[0_4px_20px_rgba(200,154,61,0.3)]"
                   )}
                 >
                   Request a Quote
+                  <ArrowRight size={12} className="opacity-70" />
                 </Link>
-              </div>
 
-              {/* Mobile Toggle */}
-              <button
-                className="lg:hidden text-steel hover:text-smoke transition-colors p-2"
-                onClick={() => setMobileOpen(!mobileOpen)}
-                aria-label="Toggle menu"
-              >
-                {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-              </button>
+                {/* Mobile Toggle */}
+                <button
+                  className="lg:hidden text-steel hover:text-smoke transition-colors p-2"
+                  onClick={() => setMobileOpen(!mobileOpen)}
+                  aria-label="Toggle menu"
+                >
+                  {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+                </button>
+              </div>
             </div>
           </div>
         </div>
