@@ -6,8 +6,27 @@ import StaggerContainer from "@/components/animations/StaggerContainer";
 import { staggerItem } from "@/components/animations/StaggerContainer";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import {
+  Cpu,
+  Zap,
+  DiscIcon,
+  ScanLine,
+  Activity,
+  Sparkles,
+  ClipboardCheck,
+} from "lucide-react";
 
-const capabilities = [
+const coreCapabilities = [
+  { icon: Cpu,           label: "CNC Precision\nMachining" },
+  { icon: Zap,           label: "Laser\nWelding" },
+  { icon: DiscIcon,      label: "Precision\nGrinding" },
+  { icon: ScanLine,      label: "3D Mold\nScanning" },
+  { icon: Activity,      label: "Non-Destructive\nTesting" },
+  { icon: Sparkles,      label: "Advanced Mold\nCleaning" },
+  { icon: ClipboardCheck,label: "Quality\nInspection" },
+];
+
+const capabilityGroups = [
   {
     category: "Machining & Repair",
     items: [
@@ -76,14 +95,15 @@ export default function TechnicalCapabilities() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative">
+
+        {/* Section header */}
         <div className="grid lg:grid-cols-[1fr_1fr] gap-16 lg:gap-20 items-start mb-16">
           <SectionHeading
-            overline="Technical Capabilities"
+            overline="Technology & Capabilities"
             title={"Advanced\nTechnology for\nPrecision Results"}
             subtitle="Our facility combines advanced machining, inspection, and automation technology with deep engineering expertise to deliver results at the highest level of precision."
           />
 
-          {/* Feature image: robotic AI machining from presentation */}
           <FadeIn delay={0.2} direction="left">
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
@@ -111,7 +131,39 @@ export default function TechnicalCapabilities() {
           </FadeIn>
         </div>
 
-        {/* Second image strip */}
+        {/* ── Core 7 Capabilities Icon Grid ── */}
+        <FadeIn className="mb-16">
+          <div className="border border-white/[0.06] bg-charcoal/20 p-8 md:p-10">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-8 bg-gold" />
+              <span className="font-heading text-xs uppercase tracking-[0.25em] text-gold">
+                Core Capabilities
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+              {coreCapabilities.map((cap, i) => (
+                <motion.div
+                  key={cap.label}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.07, duration: 0.45 }}
+                  className="flex flex-col items-center text-center gap-3 p-4 border border-white/[0.05] bg-[#0B0B0D]/50 hover:border-gold/25 hover:bg-charcoal/40 transition-all duration-300 group"
+                >
+                  <div className="w-11 h-11 flex items-center justify-center border border-gold/20 bg-gold/[0.06] group-hover:border-gold/50 group-hover:bg-gold/[0.1] transition-all duration-300">
+                    <cap.icon size={18} className="text-gold" strokeWidth={1.5} />
+                  </div>
+                  <span className="font-heading font-semibold text-[10px] uppercase tracking-[0.15em] text-smoke leading-tight whitespace-pre-line">
+                    {cap.label}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
+        {/* Image strip */}
         <FadeIn className="mb-12">
           <div className="grid grid-cols-2 gap-px bg-white/[0.04]">
             <div className="relative aspect-[16/6] overflow-hidden group">
@@ -145,8 +197,9 @@ export default function TechnicalCapabilities() {
           </div>
         </FadeIn>
 
+        {/* Full capability groups */}
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {capabilities.map((cap) => (
+          {capabilityGroups.map((cap) => (
             <motion.div key={cap.category} variants={staggerItem}>
               <div className="border border-white/[0.06] bg-charcoal/20 p-7 h-full hover:border-gold/20 hover:bg-charcoal/40 transition-all duration-300 group">
                 <div className="flex items-center gap-3 mb-5">
@@ -169,6 +222,7 @@ export default function TechnicalCapabilities() {
             </motion.div>
           ))}
         </StaggerContainer>
+
       </div>
     </section>
   );

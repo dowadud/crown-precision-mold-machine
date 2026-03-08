@@ -1,16 +1,15 @@
 import FadeIn from "@/components/animations/FadeIn";
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, Mail } from "lucide-react";
 
 export default function CTABanner() {
   return (
     <section className="py-20 md:py-28 bg-[#0B0B0D] relative overflow-hidden">
-      {/* Gold gradient accent */}
+      {/* Background accents */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0D] via-gold/[0.04] to-[#0B0B0D]" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
-      {/* Diagonal lines */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.03]" preserveAspectRatio="none">
         <line x1="0" y1="100%" x2="100%" y2="0" stroke="#C89A3D" strokeWidth="1" />
         <line x1="0" y1="80%" x2="80%" y2="0" stroke="#C89A3D" strokeWidth="1" />
@@ -79,22 +78,56 @@ export default function CTABanner() {
           </div>
         </FadeIn>
 
+        {/* ── Contact strip ── */}
         <FadeIn delay={0.4}>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
-            <div className="flex items-center gap-2 text-metal text-xs">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-              <span className="font-heading uppercase tracking-widest">24/7 Technical Support</span>
-            </div>
-            <div className="flex items-center gap-2 text-metal text-xs">
-              <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-              <span className="font-heading uppercase tracking-widest">Rapid Response Agreements</span>
-            </div>
-            <div className="flex items-center gap-2 text-metal text-xs">
-              <div className="w-1.5 h-1.5 rounded-full bg-steel/40" />
-              <span className="font-heading uppercase tracking-widest">ISO 9001 Aligned QA</span>
+          <div className="mt-12 pt-10 border-t border-white/[0.06]">
+            <p className="font-heading text-[10px] uppercase tracking-[0.3em] text-metal/50 mb-5">
+              Contact Us Directly
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8">
+              <a
+                href="tel:3053332660"
+                className="flex items-center gap-2.5 group"
+              >
+                <div className="w-8 h-8 flex items-center justify-center border border-gold/20 bg-gold/[0.05] group-hover:border-gold/50 transition-colors">
+                  <Phone size={13} className="text-gold" strokeWidth={1.5} />
+                </div>
+                <span className="font-heading font-bold text-sm text-smoke group-hover:text-gold transition-colors tracking-wider">
+                  305.333.2660
+                </span>
+              </a>
+
+              <div className="h-6 w-px bg-white/[0.08] hidden sm:block" />
+
+              <a
+                href="mailto:marcorestrepo@cpmandm.com"
+                className="flex items-center gap-2.5 group"
+              >
+                <div className="w-8 h-8 flex items-center justify-center border border-gold/20 bg-gold/[0.05] group-hover:border-gold/50 transition-colors">
+                  <Mail size={13} className="text-gold" strokeWidth={1.5} />
+                </div>
+                <span className="font-heading font-bold text-sm text-smoke group-hover:text-gold transition-colors tracking-wider">
+                  marcorestrepo@cpmandm.com
+                </span>
+              </a>
+
+              <div className="h-6 w-px bg-white/[0.08] hidden sm:block" />
+
+              <a
+                href="mailto:admin@cpmandm.com"
+                className="flex items-center gap-2.5 group"
+              >
+                <div className="w-8 h-8 flex items-center justify-center border border-gold/20 bg-gold/[0.05] group-hover:border-gold/50 transition-colors">
+                  <Mail size={13} className="text-gold" strokeWidth={1.5} />
+                </div>
+                <span className="font-heading font-bold text-sm text-smoke group-hover:text-gold transition-colors tracking-wider">
+                  admin@cpmandm.com
+                </span>
+              </a>
             </div>
           </div>
         </FadeIn>
+
       </div>
     </section>
   );

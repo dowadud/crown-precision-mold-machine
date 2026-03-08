@@ -17,21 +17,31 @@ export default function AboutSnapshot() {
     <section className="py-24 md:py-32 bg-[#0B0B0D] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
           {/* Left: text */}
           <div>
             <SectionHeading
               overline="About Crown Precision"
               title={"Built by\nIndustry\nVeterans"}
-              subtitle="Founded by engineers with over a century of combined expertise in tire mold manufacturing and precision machining — Crown Precision was built to solve the problems that legacy suppliers couldn't."
             />
 
-            <FadeIn delay={0.25}>
-              <div className="space-y-4 mb-8">
+            <FadeIn delay={0.2}>
+              <p className="text-metal text-base leading-relaxed mb-6">
+                Crown Precision Mold &amp; Machine was founded by industry veterans with
+                more than <span className="text-smoke font-semibold">100 years of combined experience</span> in
+                tire mold manufacturing, repair, and precision machining. Our team understands
+                the operational demands of modern tire production facilities and delivers
+                solutions focused on reliability, quality, and efficiency.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.28}>
+              <div className="space-y-3 mb-8">
                 {[
-                  "Deep expertise in mold design, machining, and industrial repair spanning the full tire mold lifecycle.",
-                  "Commitment to quality, traceability, and ISO 9001-aligned standards across every service.",
-                  "Strategic partnerships with global tire manufacturers including Goodyear, Bridgestone, Continental, Pirelli, and more.",
-                  "Lean operations and advanced technology — robotic machining, AI-driven inspection, 3D scanning, and nondestructive testing.",
+                  "Deep expertise spanning the full tire mold lifecycle — from initial inspection through final certification.",
+                  "ISO 9001-aligned standards with full traceability documentation on every service.",
+                  "Strategic partnerships with global tire manufacturers including Goodyear, Bridgestone, Continental, and Pirelli.",
+                  "Advanced technology: robotic machining, AI-driven inspection, 3D scanning, and nondestructive testing.",
                 ].map((point, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
@@ -41,7 +51,7 @@ export default function AboutSnapshot() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.35}>
+            <FadeIn delay={0.36}>
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 font-heading font-bold text-xs uppercase tracking-widest text-gold hover:text-gold-light transition-colors group"
@@ -54,7 +64,6 @@ export default function AboutSnapshot() {
 
           {/* Right: image + stats */}
           <div className="space-y-px">
-            {/* Primary image */}
             <FadeIn delay={0.15} direction="left">
               <div className="relative w-full aspect-[4/3] overflow-hidden">
                 <Image
@@ -64,10 +73,8 @@ export default function AboutSnapshot() {
                   className="object-cover object-center"
                   quality={85}
                 />
-                {/* Dark overlay at bottom to blend into stats below */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D]/60 via-transparent to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0B0B0D]/20" />
-                {/* Gold border accent */}
                 <div className="absolute inset-0 border border-gold/10" />
               </div>
             </FadeIn>
@@ -106,6 +113,7 @@ export default function AboutSnapshot() {
               </div>
             </FadeIn>
           </div>
+
         </div>
       </div>
     </section>
