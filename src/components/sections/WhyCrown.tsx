@@ -5,6 +5,7 @@ import FadeIn from "@/components/animations/FadeIn";
 import StaggerContainer from "@/components/animations/StaggerContainer";
 import { staggerItem } from "@/components/animations/StaggerContainer";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   TrendingDown,
   TrendingUp,
@@ -20,52 +21,92 @@ const outcomes = [
     metric: "25–35%",
     label: "Reduction in mold-related capex",
     description:
-      "Precision refurbishment eliminates the need for full mold replacement, delivering measurable capital savings.",
+      "Precision refurbishment eliminates full mold replacement, delivering measurable capital savings.",
   },
   {
     icon: TrendingUp,
     metric: "15%",
     label: "Average increase in mold lifespan",
     description:
-      "Advanced refurbishment techniques extend operational mold life beyond industry baseline expectations.",
+      "Advanced refurbishment techniques extend operational mold life beyond industry baselines.",
   },
   {
     icon: Target,
     metric: "20%",
     label: "Reduction in tire production defects",
     description:
-      "High-quality molds improve uniformity, consistency, and overall product quality across production runs.",
+      "High-quality molds improve uniformity, consistency, and overall product quality.",
   },
   {
     icon: Timer,
     metric: "24/7",
     label: "Technical support availability",
     description:
-      "Rapid-response service agreements and round-the-clock engineering support minimize production disruption.",
+      "Rapid-response agreements and round-the-clock engineering support minimize disruption.",
   },
   {
     icon: CheckCircle,
     metric: "ISO 9001",
     label: "Quality standards compliance",
     description:
-      "Strict QA protocols, traceability documentation, and certification ensure regulatory and production standards.",
+      "Strict QA protocols, traceability documentation, and certification ensure standards.",
   },
   {
     icon: Users,
     metric: "5",
     label: "Continents served globally",
     description:
-      "Scalable services and operational flexibility support diverse standards and requirements across global markets.",
+      "Scalable services and operational flexibility support global standards and requirements.",
   },
 ];
 
 export default function WhyCrown() {
   return (
-    <section className="py-24 md:py-32 bg-[#0B0B0D] relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold/[0.03] blur-[100px] pointer-events-none" />
+    <section className="py-24 md:py-32 bg-charcoal/10 relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative">
+        {/* Top: full-width feature image */}
+        <FadeIn className="mb-16">
+          <div className="relative w-full aspect-[21/7] overflow-hidden">
+            <Image
+              src="/images/mold-before-after.jpg"
+              alt="Tire mold before and after refurbishment showing performance improvement"
+              fill
+              className="object-cover object-center"
+              quality={85}
+            />
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-[#0B0B0D]/60" />
+            {/* Content overlay */}
+            <div className="absolute inset-0 flex items-center">
+              <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-px w-8 bg-gold" />
+                  <span className="font-heading text-xs uppercase tracking-[0.25em] text-gold">
+                    Before & After
+                  </span>
+                </div>
+                <p className="font-heading font-black uppercase text-2xl md:text-3xl text-smoke max-w-lg leading-tight">
+                  Worn molds restored to
+                  <span
+                    className="block"
+                    style={{
+                      background: "linear-gradient(135deg, #C89A3D, #E0B45C)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    full production spec.
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="absolute inset-0 border border-gold/10" />
+          </div>
+        </FadeIn>
+
         <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16 lg:gap-24">
           {/* Left: heading + quote */}
           <div className="lg:sticky lg:top-32 lg:self-start">
@@ -76,7 +117,7 @@ export default function WhyCrown() {
             />
 
             <FadeIn delay={0.3}>
-              <div className="border border-gold/15 bg-gold/[0.03] p-6">
+              <div className="border border-gold/15 bg-gold/[0.03] p-6 mb-6">
                 <p className="text-steel/70 text-sm leading-relaxed italic">
                   &ldquo;Crown Precision exemplifies effective collaboration —
                   integrating specialized expertise into the tire value chain to
@@ -89,6 +130,21 @@ export default function WhyCrown() {
                     Industry Partnership Perspective
                   </span>
                 </div>
+              </div>
+            </FadeIn>
+
+            {/* Secondary image */}
+            <FadeIn delay={0.4}>
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/engineers-inspection.jpg"
+                  alt="Engineers inspecting precision mold components"
+                  fill
+                  className="object-cover object-center"
+                  quality={80}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D]/40 to-transparent" />
+                <div className="absolute inset-0 border border-gold/10" />
               </div>
             </FadeIn>
           </div>
@@ -108,8 +164,7 @@ export default function WhyCrown() {
                       <div
                         className="font-heading font-black text-3xl leading-none"
                         style={{
-                          background:
-                            "linear-gradient(135deg, #C89A3D 0%, #E0B45C 100%)",
+                          background: "linear-gradient(135deg, #C89A3D 0%, #E0B45C 100%)",
                           WebkitBackgroundClip: "text",
                           WebkitTextFillColor: "transparent",
                           backgroundClip: "text",
@@ -122,9 +177,7 @@ export default function WhyCrown() {
                       </div>
                     </div>
                   </div>
-                  <p className="text-metal text-sm leading-relaxed">
-                    {item.description}
-                  </p>
+                  <p className="text-metal text-sm leading-relaxed">{item.description}</p>
                 </div>
               </motion.div>
             ))}

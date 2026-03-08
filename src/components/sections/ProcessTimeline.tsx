@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const steps = [
@@ -11,6 +12,8 @@ const steps = [
     description:
       "Molds are received and undergo comprehensive dimensional inspection, 3D scanning, and nondestructive testing to identify all wear patterns, cracks, and defects.",
     tags: ["3D Scanning", "NDT Inspection", "Dimensional Analysis"],
+    image: "/images/3d-scanning-inspection.jpg",
+    imageAlt: "3D laser scanning of tire mold for precision inspection",
   },
   {
     number: "02",
@@ -18,6 +21,8 @@ const steps = [
     description:
       "Our engineers analyze findings, define repair scope, and develop a precision service plan — specifying machining tolerances, weld procedures, and modification requirements.",
     tags: ["Engineering Analysis", "Tolerance Definition", "Service Planning"],
+    image: "/images/engineers-inspection.jpg",
+    imageAlt: "Engineers reviewing mold specifications",
   },
   {
     number: "03",
@@ -25,6 +30,8 @@ const steps = [
     description:
       "CNC machining, laser welding, and precision grinding are applied to restore geometry and surface finish. Mold modifications are executed to exact specification.",
     tags: ["CNC Machining", "Laser Welding", "Precision Grinding"],
+    image: "/images/cnc-machining-sparks.jpg",
+    imageAlt: "CNC machining with precision grinding and sparks",
   },
   {
     number: "04",
@@ -32,6 +39,8 @@ const steps = [
     description:
       "Ultrasonic cleaning and eco-friendly solvents remove all contaminants. Surface treatments are applied where required to meet production specifications.",
     tags: ["Ultrasonic Cleaning", "Surface Treatment", "Contamination Removal"],
+    image: "/images/cleaning-certification.jpg",
+    imageAlt: "Ultrasonic cleaning equipment with ISO 9001 certification",
   },
   {
     number: "05",
@@ -39,6 +48,8 @@ const steps = [
     description:
       "Full dimensional re-inspection, quality documentation, ISO 9001-aligned certification, and traceability records are completed before release.",
     tags: ["ISO 9001", "Full Documentation", "Traceability"],
+    image: "/images/mold-before-after.jpg",
+    imageAlt: "Mold quality assurance and before/after inspection",
   },
   {
     number: "06",
@@ -46,6 +57,8 @@ const steps = [
     description:
       "Certified molds are prepared for shipment with full service documentation. Ongoing lifecycle support and maintenance scheduling are established for continued performance.",
     tags: ["Production Ready", "Lifecycle Scheduling", "24/7 Support"],
+    image: "/images/tire-production-floor.jpg",
+    imageAlt: "Tire production floor with molds ready for production",
   },
 ];
 
@@ -56,7 +69,7 @@ export default function ProcessTimeline() {
   return (
     <section
       ref={containerRef}
-      className="py-24 md:py-32 bg-charcoal/10 relative overflow-hidden"
+      className="py-24 md:py-32 bg-[#0B0B0D] relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent" />
 
@@ -94,55 +107,60 @@ export default function ProcessTimeline() {
                     delay: index * 0.15,
                     ease: [0.25, 0.1, 0.25, 1],
                   }}
-                  className={`lg:flex lg:items-center ${
-                    isLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-                  } gap-0`}
+                  className={`lg:flex lg:items-start ${isLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`}
                 >
-                  {/* Content */}
-                  <div
-                    className={`lg:w-[calc(50%-48px)] ${isLeft ? "lg:text-right lg:pr-12" : "lg:text-left lg:pl-12"}`}
-                  >
-                    <div
-                      className={`bg-charcoal/40 border border-white/[0.06] p-7 hover:border-gold/20 hover:bg-charcoal/70 transition-all duration-400 group relative ${
-                        isLeft ? "" : ""
-                      }`}
-                    >
-                      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div
-                        className="font-heading font-black text-6xl leading-none mb-3 opacity-10"
-                        style={{
-                          background:
-                            "linear-gradient(135deg, #C89A3D, #E0B45C)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                          backgroundClip: "text",
-                        }}
-                      >
-                        {step.number}
+                  {/* Content card */}
+                  <div className={`lg:w-[calc(50%-48px)] ${isLeft ? "lg:pr-12" : "lg:pl-12"}`}>
+                    <div className="bg-charcoal/30 border border-white/[0.06] overflow-hidden hover:border-gold/20 hover:bg-charcoal/50 transition-all duration-400 group relative">
+                      {/* Image */}
+                      <div className="relative w-full aspect-[16/7] overflow-hidden">
+                        <Image
+                          src={step.image}
+                          alt={step.imageAlt}
+                          fill
+                          className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                          quality={80}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1D22] via-[#1A1D22]/30 to-transparent" />
+                        {/* Step number over image */}
+                        <div
+                          className="absolute top-4 left-4 font-heading font-black text-5xl leading-none opacity-30"
+                          style={{
+                            background: "linear-gradient(135deg, #C89A3D, #E0B45C)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                          }}
+                        >
+                          {step.number}
+                        </div>
                       </div>
-                      <h3 className="font-heading font-bold uppercase text-xl tracking-wider text-smoke mb-3">
-                        {step.title}
-                      </h3>
-                      <p className="text-metal text-sm leading-relaxed mb-4">
-                        {step.description}
-                      </p>
-                      <div
-                        className={`flex flex-wrap gap-2 ${isLeft ? "lg:justify-end" : ""}`}
-                      >
-                        {step.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="font-heading text-[10px] uppercase tracking-widest text-gold/70 border border-gold/15 px-2.5 py-1"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+
+                      {/* Text content */}
+                      <div className="p-6">
+                        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <h3 className="font-heading font-bold uppercase text-lg tracking-wider text-smoke mb-2">
+                          {step.title}
+                        </h3>
+                        <p className="text-metal text-sm leading-relaxed mb-4">
+                          {step.description}
+                        </p>
+                        <div className={`flex flex-wrap gap-2 ${isLeft ? "lg:justify-start" : "lg:justify-start"}`}>
+                          {step.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="font-heading text-[10px] uppercase tracking-widest text-gold/70 border border-gold/15 px-2.5 py-1"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Center node (desktop) */}
-                  <div className="hidden lg:flex w-24 items-center justify-center shrink-0">
+                  <div className="hidden lg:flex w-24 items-start justify-center pt-8 shrink-0">
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={isInView ? { scale: 1 } : {}}

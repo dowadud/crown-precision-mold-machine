@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import CTABanner from "@/components/sections/CTABanner";
@@ -74,30 +75,58 @@ const industries = [
 export default function IndustriesPage() {
   return (
     <main className="pt-20 bg-[#0B0B0D]">
-      {/* Hero */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0B0B0D] via-[#111318] to-[#0B0B0D]" />
-        <div className="absolute top-1/2 right-1/4 w-[600px] h-[400px] rounded-full bg-gold/[0.03] blur-[100px]" />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative">
-          <div className="max-w-3xl">
-            <SectionHeading
-              overline="Industries Served"
-              title={"Serving the\nGlobal Tire\nIndustry"}
-              subtitle="From global OEM brands to regional production facilities — Crown Precision delivers precision mold services that meet the technical and operational demands of every segment of the tire manufacturing industry."
-            />
-          </div>
+      {/* Hero with image */}
+      <section className="relative h-[55vh] min-h-[420px] flex items-end overflow-hidden">
+        <Image
+          src="/images/global-tire-industry.jpg"
+          alt="Global tire industry — Crown Precision serves manufacturers on five continents"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={90}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-[#0B0B0D]/60 to-[#0B0B0D]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0D]/60 via-transparent to-transparent" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-16 w-full">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8 bg-gold" />
+              <span className="font-heading text-xs uppercase tracking-[0.25em] text-gold">Industries Served</span>
+            </div>
+            <h1
+              className="font-heading font-black uppercase text-5xl md:text-6xl leading-none"
+              style={{
+                background: "linear-gradient(180deg, #F3F4F6 0%, #BFC5CC 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Serving the
+              <br />
+              <span
+                style={{
+                  background: "linear-gradient(135deg, #C89A3D 0%, #E0B45C 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Global Tire Industry
+              </span>
+            </h1>
+          </FadeIn>
         </div>
       </section>
 
       {/* Client strip */}
-      <section className="py-10 bg-charcoal/20 border-y border-white/[0.04]">
+      <section className="py-8 bg-charcoal/20 border-b border-white/[0.04]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
             <div className="flex items-center gap-3 shrink-0">
               <ShieldCheck size={14} className="text-gold" />
-              <span className="font-heading text-[10px] uppercase tracking-[0.3em] text-gold">
-                Trusted Partners
-              </span>
+              <span className="font-heading text-[10px] uppercase tracking-[0.3em] text-gold">Trusted Partners</span>
             </div>
             <div className="h-6 w-px bg-white/10 hidden md:block" />
             {clients.map((client) => (
@@ -112,13 +141,35 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* Industries detail */}
-      <section className="py-24 md:py-32">
+      {/* Image showcase */}
+      <section className="pt-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="space-y-px bg-white/[0.03]">
+          <div className="grid grid-cols-3 gap-px bg-white/[0.04] mb-16">
+            {[
+              { src: "/images/tire-production-floor.jpg", label: "Production Facilities", alt: "Tire manufacturing production floor" },
+              { src: "/images/mold-repair-workers.jpg", label: "Mold Service Teams", alt: "Tire mold repair workers" },
+              { src: "/images/ev-tire-sustainable.jpg", label: "EV & Sustainable", alt: "Electric vehicle sustainable tire" },
+            ].map((img) => (
+              <div key={img.label} className="relative aspect-[3/2] overflow-hidden group">
+                <Image src={img.src} alt={img.alt} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-700" quality={80} />
+                <div className="absolute inset-0 bg-[#0B0B0D]/50 group-hover:bg-[#0B0B0D]/30 transition-colors duration-500" />
+                <div className="absolute bottom-4 left-4 flex items-center gap-2">
+                  <div className="h-px w-4 bg-gold" />
+                  <span className="font-heading text-[10px] uppercase tracking-widest text-gold">{img.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries detail */}
+      <section className="pb-24 md:pb-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+          <div className="divide-y divide-white/[0.04]">
             {industries.map((industry, i) => (
               <FadeIn key={industry.title} delay={0.05 * (i % 3)}>
-                <div className="bg-[#0B0B0D] p-8 md:p-10 grid md:grid-cols-[auto_1fr_1fr] gap-8 items-start hover:bg-charcoal/20 transition-all duration-300 group border-b border-white/[0.04]">
+                <div className="py-10 grid md:grid-cols-[auto_1fr_1fr] gap-8 items-start hover:bg-charcoal/10 -mx-6 px-6 md:-mx-12 md:px-12 lg:-mx-20 lg:px-20 transition-colors duration-300 group">
                   <div className="w-12 h-12 flex items-center justify-center border border-gold/20 bg-gold/5 shrink-0 group-hover:border-gold/40 transition-colors">
                     <industry.icon size={18} className="text-gold" strokeWidth={1.5} />
                   </div>
@@ -126,14 +177,10 @@ export default function IndustriesPage() {
                     <h3 className="font-heading font-bold uppercase text-xl tracking-wider text-smoke mb-3 group-hover:text-gold transition-colors duration-300">
                       {industry.title}
                     </h3>
-                    <p className="text-metal text-sm leading-relaxed">
-                      {industry.description}
-                    </p>
+                    <p className="text-metal text-sm leading-relaxed">{industry.description}</p>
                   </div>
                   <div className="border-l border-white/[0.06] pl-8 hidden md:block">
-                    <p className="text-metal/70 text-sm leading-relaxed italic">
-                      {industry.detail}
-                    </p>
+                    <p className="text-metal/70 text-sm leading-relaxed italic">{industry.detail}</p>
                   </div>
                 </div>
               </FadeIn>

@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import {
   Wrench,
   RefreshCw,
@@ -14,25 +15,26 @@ import {
 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
+import FadeIn from "@/components/animations/FadeIn";
 
 const services = [
   {
     icon: Wrench,
     title: "Tire Mold Repair",
     description:
-      "Precision repair of damaged tire molds using advanced CNC machining, laser welding, and precision grinding — restoring full production capability fast.",
+      "Precision repair of damaged tire molds using CNC machining, laser welding, and precision grinding — restoring full production capability fast.",
   },
   {
     icon: RefreshCw,
     title: "Tire Mold Refurbishment",
     description:
-      "Complete mold refurbishment programs that extend operational life by an average of 15%, reducing capital expenditure on full mold replacement.",
+      "Complete mold refurbishment programs extending operational life by an average of 15%, reducing mold-related capital expenditure by 25–35%.",
   },
   {
     icon: Settings,
     title: "Mold Modification",
     description:
-      "Adapt existing molds to new tire designs without full replacement. Expert modifications reduce costs by up to 30% compared to new tooling.",
+      "Adapt existing molds to new tire designs without full replacement. Expert modifications reduce costs by up to 30% versus new tooling.",
   },
   {
     icon: Sparkles,
@@ -44,25 +46,25 @@ const services = [
     icon: ClipboardCheck,
     title: "Inspection & Certification",
     description:
-      "ISO 9001-aligned quality assurance, 3D scanning, and nondestructive testing with full traceability documentation and certification.",
+      "ISO 9001-aligned QA, 3D scanning, and nondestructive testing with full traceability documentation and certification.",
   },
   {
     icon: Cpu,
     title: "CNC Machining",
     description:
-      "High-precision CNC machining for mold components, tooling, and custom part fabrication with tight tolerances and industrial-grade accuracy.",
+      "High-precision CNC machining for mold components and custom fabrication with tight tolerances and industrial-grade accuracy.",
   },
   {
     icon: Zap,
     title: "Laser Welding",
     description:
-      "Laser welding technology for precise mold repair, crack sealing, and material buildup — ideal for complex geometry and hard-to-reach areas.",
+      "Laser welding for precise mold repair, crack sealing, and material buildup — ideal for complex geometry and hard-to-reach areas.",
   },
   {
     icon: LifeBuoy,
     title: "Maintenance & Lifecycle Support",
     description:
-      "Proactive maintenance schedules, performance analytics, and 24/7 technical support to maximize mold readiness and minimize unplanned downtime.",
+      "Proactive maintenance, performance analytics, and 24/7 technical support to maximize mold readiness and minimize unplanned downtime.",
   },
 ];
 
@@ -71,17 +73,42 @@ export default function ServicesGrid() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 md:py-32 bg-charcoal/20 relative">
-      {/* Top border accent */}
+    <section className="py-24 md:py-32 bg-[#0B0B0D] relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-        <SectionHeading
-          overline="Our Services"
-          title={"Tire Mold\nServices That\nDeliver"}
-          subtitle="From emergency repair to full lifecycle programs — every service is engineered for performance, precision, and production continuity."
-        />
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-20 items-start mb-16">
+          <SectionHeading
+            overline="Our Services"
+            title={"Tire Mold\nServices That\nDeliver"}
+            subtitle="From emergency repair to full lifecycle programs — every service is engineered for performance, precision, and production continuity."
+          />
 
+          {/* Featured image alongside heading */}
+          <FadeIn delay={0.2} direction="left">
+            <div className="relative aspect-[16/10] overflow-hidden">
+              <Image
+                src="/images/mold-repair-workers.jpg"
+                alt="Technicians working on tire mold repair"
+                fill
+                className="object-cover object-center"
+                quality={85}
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0B0B0D]/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D]/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 border border-gold/10" />
+              {/* Overlay label */}
+              <div className="absolute bottom-4 left-4 flex items-center gap-3">
+                <div className="h-px w-6 bg-gold" />
+                <span className="font-heading text-[10px] uppercase tracking-[0.25em] text-gold">
+                  Expert Technicians
+                </span>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Service cards grid */}
         <motion.div
           ref={ref}
           initial="hidden"

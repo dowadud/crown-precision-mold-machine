@@ -3,7 +3,9 @@
 import SectionHeading from "@/components/ui/SectionHeading";
 import StaggerContainer from "@/components/animations/StaggerContainer";
 import { staggerItem } from "@/components/animations/StaggerContainer";
+import FadeIn from "@/components/animations/FadeIn";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Globe, Factory, Truck, Zap, Award, TrendingUp } from "lucide-react";
 
 const industries = [
@@ -53,10 +55,33 @@ const industries = [
 
 export default function Industries() {
   return (
-    <section className="py-24 md:py-32 bg-[#0B0B0D] relative">
+    <section className="py-24 md:py-32 bg-charcoal/10 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        {/* Feature image strip */}
+        <FadeIn className="mb-16">
+          <div className="grid grid-cols-3 gap-px bg-white/[0.04]">
+            {[
+              { src: "/images/global-tire-industry.jpg", alt: "Global tire industry reach across five continents" },
+              { src: "/images/tire-production-floor.jpg", alt: "Tire manufacturing production floor" },
+              { src: "/images/ev-tire-sustainable.jpg", alt: "Electric vehicle sustainable tire manufacturing" },
+            ].map((img, i) => (
+              <div key={i} className="relative aspect-[4/3] overflow-hidden group">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  quality={80}
+                />
+                <div className="absolute inset-0 bg-[#0B0B0D]/50 group-hover:bg-[#0B0B0D]/30 transition-colors duration-500" />
+                <div className="absolute inset-0 border border-gold/[0.07]" />
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+
         <SectionHeading
           overline="Industries We Serve"
           title={"Serving Global\nTire Industry\nLeaders"}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import StaggerContainer from "@/components/animations/StaggerContainer";
@@ -74,33 +75,60 @@ const milestones = [
 export default function AboutPage() {
   return (
     <main className="pt-20 bg-[#0B0B0D]">
-      {/* Hero */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0B0B0D] via-[#111318] to-[#0B0B0D]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-gold/[0.03] blur-[100px]" />
+      {/* Hero with full-bleed image */}
+      <section className="relative h-[60vh] min-h-[480px] flex items-end overflow-hidden">
+        <Image
+          src="/images/mold-repair-team.jpg"
+          alt="Crown Precision team repairing precision tire mold"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={90}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-[#0B0B0D]/60 to-[#0B0B0D]/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0D]/60 via-transparent to-transparent" />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative">
-          <div className="max-w-3xl">
-            <SectionHeading
-              overline="About Us"
-              title={"Built by\nExperts,\nDriven by\nPrecision"}
-              subtitle="Crown Precision Mold & Machine was founded by engineers who have spent careers in the tire mold industry — and built a company to solve problems that legacy suppliers couldn't."
-            />
-          </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pb-16 w-full">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8 bg-gold" />
+              <span className="font-heading text-xs uppercase tracking-[0.25em] text-gold">About Us</span>
+            </div>
+            <h1
+              className="font-heading font-black uppercase text-5xl md:text-6xl lg:text-7xl leading-none"
+              style={{
+                background: "linear-gradient(180deg, #F3F4F6 0%, #BFC5CC 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Built by Experts,
+              <br />
+              <span
+                style={{
+                  background: "linear-gradient(135deg, #C89A3D 0%, #E0B45C 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Driven by Precision
+              </span>
+            </h1>
+          </FadeIn>
         </div>
       </section>
 
       {/* Founding story */}
-      <section className="py-20 md:py-28 bg-charcoal/10">
+      <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <FadeIn>
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-px w-8 bg-gold" />
-                  <span className="font-heading text-xs uppercase tracking-[0.25em] text-gold">
-                    Our Story
-                  </span>
+                  <span className="font-heading text-xs uppercase tracking-[0.25em] text-gold">Our Story</span>
                 </div>
                 <h2
                   className="font-heading font-black uppercase text-3xl md:text-4xl leading-tight mb-6"
@@ -138,6 +166,19 @@ export default function AboutPage() {
                     demanding tire manufacturers in the world.
                   </p>
                 </div>
+
+                {/* Inline image within story column */}
+                <div className="relative mt-8 aspect-[16/8] overflow-hidden">
+                  <Image
+                    src="/images/engineers-inspection.jpg"
+                    alt="Engineering team inspecting precision mold component"
+                    fill
+                    className="object-cover object-center"
+                    quality={80}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D]/40 to-transparent" />
+                  <div className="absolute inset-0 border border-gold/10" />
+                </div>
               </div>
             </FadeIn>
 
@@ -165,14 +206,46 @@ export default function AboutPage() {
                       <h4 className="font-heading font-bold uppercase text-sm tracking-wider text-smoke mb-1">
                         {milestone.title}
                       </h4>
-                      <p className="text-metal text-xs leading-relaxed">
-                        {milestone.description}
-                      </p>
+                      <p className="text-metal text-xs leading-relaxed">{milestone.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Full-width technology image */}
+      <section className="relative w-full aspect-[21/6] overflow-hidden">
+        <Image
+          src="/images/robotic-ai-machining.jpg"
+          alt="Advanced robotic AI manufacturing technology at Crown Precision"
+          fill
+          className="object-cover object-center"
+          quality={85}
+        />
+        <div className="absolute inset-0 bg-[#0B0B0D]/65" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="h-px w-8 bg-gold" />
+              <span className="font-heading text-xs uppercase tracking-[0.25em] text-gold">Technology</span>
+            </div>
+            <p className="font-heading font-black uppercase text-2xl md:text-3xl text-smoke max-w-xl leading-tight">
+              Robotic machining. AI inspection.
+              <span
+                className="block"
+                style={{
+                  background: "linear-gradient(135deg, #C89A3D, #E0B45C)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Lean operations.
+              </span>
+            </p>
           </div>
         </div>
       </section>
@@ -195,9 +268,7 @@ export default function AboutPage() {
                   <h3 className="font-heading font-bold uppercase text-sm tracking-wider text-smoke mb-3 group-hover:text-gold transition-colors">
                     {value.title}
                   </h3>
-                  <p className="text-metal text-sm leading-relaxed">
-                    {value.description}
-                  </p>
+                  <p className="text-metal text-sm leading-relaxed">{value.description}</p>
                 </div>
               </div>
             ))}
