@@ -12,7 +12,9 @@ import {
   CheckCircle,
   Timer,
   Target,
-  Users,
+  Globe,
+  Award,
+  Scissors,
 } from "lucide-react";
 
 const outcomes = [
@@ -21,42 +23,56 @@ const outcomes = [
     metric: "25–35%",
     label: "Reduction in mold-related capex",
     description:
-      "Precision refurbishment eliminates full mold replacement, delivering measurable capital savings.",
+      "Precision refurbishment eliminates full mold replacement — lowering capital expenditure and reducing operational scrap rates simultaneously.",
   },
   {
     icon: TrendingUp,
     metric: "15%",
     label: "Average increase in mold lifespan",
     description:
-      "Advanced refurbishment techniques extend operational mold life beyond industry baselines.",
+      "Advanced refurbishment techniques extend operational mold life beyond industry baselines, reducing replacement frequency across the fleet.",
   },
   {
     icon: Target,
-    metric: "20%",
+    metric: "Up to 20%",
     label: "Reduction in tire production defects",
     description:
-      "High-quality molds improve uniformity, consistency, and overall product quality.",
+      "High-quality molds improve tire uniformity and consistency, directly reducing defect rates on the production line.",
   },
   {
     icon: Timer,
     metric: "24/7",
     label: "Technical support availability",
     description:
-      "Rapid-response agreements and round-the-clock engineering support minimize disruption.",
+      "Dedicated account management and round-the-clock engineering support keep production running with minimal unplanned disruption.",
   },
   {
     icon: CheckCircle,
     metric: "ISO 9001",
     label: "Quality standards compliance",
     description:
-      "Strict QA protocols, traceability documentation, and certification ensure standards.",
+      "Strict QA protocols, full traceability documentation, and certified release records on every service engagement.",
   },
   {
-    icon: Users,
+    icon: Award,
+    metric: "↑ Brand",
+    label: "Enhanced brand reputation",
+    description:
+      "Higher tire quality translates directly to increased consumer confidence and a stronger market reputation for your brand.",
+  },
+  {
+    icon: Scissors,
+    metric: "Up to 30%",
+    label: "Cost reduction via mold modification",
+    description:
+      "Adapting existing molds to new tire designs avoids full tooling replacement and cuts modification costs by up to 30%.",
+  },
+  {
+    icon: Globe,
     metric: "5",
     label: "Continents served globally",
     description:
-      "Scalable services and operational flexibility support global standards and requirements.",
+      "Scalable services and operational flexibility support diverse global standards, compliance requirements, and production environments.",
   },
 ];
 
@@ -150,7 +166,7 @@ export default function WhyCrown() {
           </div>
 
           {/* Right: outcome cards */}
-          <StaggerContainer className="grid sm:grid-cols-2 gap-px bg-white/[0.04]">
+          <StaggerContainer className="grid sm:grid-cols-2 xl:grid-cols-2 gap-px bg-white/[0.04]">
             {outcomes.map((item) => (
               <motion.div key={item.label} variants={staggerItem}>
                 <div className="bg-[#0B0B0D] p-7 h-full group hover:bg-charcoal/40 transition-colors duration-300 relative">

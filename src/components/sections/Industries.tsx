@@ -34,7 +34,7 @@ const industries = [
     icon: Zap,
     title: "Electric Vehicle Tire Manufacturers",
     description:
-      "Emerging EV-specific tire producers demanding specialized mold geometries, tighter tolerances, and sustainable manufacturing materials.",
+      "As EV adoption accelerates, demand grows for specialized tire molds built to tighter tolerances with sustainable materials. Crown is positioned to support this transition with precision refurbishment, eco-compatible cleaning processes, and smart manufacturing capabilities.",
     clients: ["EV Tire Producers", "Performance Tire Lines"],
   },
   {

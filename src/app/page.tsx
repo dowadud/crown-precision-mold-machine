@@ -7,6 +7,7 @@ import WhyCrown from "@/components/sections/WhyCrown";
 import WhyBuyers from "@/components/sections/WhyBuyers";
 import ProcessTimeline from "@/components/sections/ProcessTimeline";
 import Industries from "@/components/sections/Industries";
+import FutureReady from "@/components/sections/FutureReady";
 import TechnicalCapabilities from "@/components/sections/TechnicalCapabilities";
 import CTABanner from "@/components/sections/CTABanner";
 
@@ -22,6 +23,7 @@ export default function HomePage() {
       <WhyBuyers />
       <ProcessTimeline />
       <Industries />
+      <FutureReady />
       <TechnicalCapabilities />
       <CTABanner />
     </>

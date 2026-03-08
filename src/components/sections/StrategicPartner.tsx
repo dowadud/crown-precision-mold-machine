@@ -6,23 +6,28 @@ import { staggerItem } from "@/components/animations/StaggerContainer";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldCheck, Clock, BarChart3 } from "lucide-react";
+import { ArrowRight, ShieldCheck, Clock, BarChart3, UserCheck } from "lucide-react";
 
 const pillars = [
   {
     icon: ShieldCheck,
     title: "Extend Mold Life",
-    body: "Advanced refurbishment and precision repair techniques restore molds to full production specification, adding years to asset life.",
+    body: "Advanced refurbishment and precision repair techniques restore molds to full production specification, adding years to asset life and reducing replacement frequency.",
   },
   {
     icon: Clock,
-    title: "Reduce Downtime",
-    body: "Rapid-response service agreements and 24/7 technical support keep your production line running with minimal unplanned stoppages.",
+    title: "Reduce Downtime & Scrap",
+    body: "Rapid-response service agreements and 24/7 technical availability minimize unplanned stoppages and lower scrap rates across the production line.",
   },
   {
     icon: BarChart3,
-    title: "Improve Reliability",
-    body: "ISO 9001-aligned quality protocols and certified documentation give manufacturers measurable confidence in every mold we return.",
+    title: "Strengthen Your Market Position",
+    body: "Lower mold-related capex, higher output quality, and reduced defect rates give your operations the cost efficiency to compete more aggressively in global tire markets.",
+  },
+  {
+    icon: UserCheck,
+    title: "Dedicated Account Management",
+    body: "Long-term partnerships are built through personalized account management, tailored service agreements, and continuous improvement programs aligned to your production goals.",
   },
 ];
 

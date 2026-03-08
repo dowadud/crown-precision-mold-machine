@@ -42,6 +42,7 @@ export default function AboutSnapshot() {
                   "ISO 9001-aligned quality standards with complete traceability documentation on every service engagement.",
                   "Trusted by global tire manufacturers including Goodyear, Bridgestone, Continental, and Pirelli.",
                   "Advanced capabilities: CNC precision machining, laser welding, 3D mold scanning, AI-driven inspection, and NDT.",
+                  "The modern, high-precision alternative to legacy tire mold suppliers — built for speed, accountability, and the demands of today's production environments.",
                 ].map((point, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
