@@ -97,8 +97,8 @@ export default function FutureReady() {
             <div className="space-y-px">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="/images/ev-tire-sustainable.jpg"
-                  alt="Electric vehicle tire manufacturing — sustainable and precision-driven"
+                  src="/images/tire-production-floor.jpg"
+                  alt="Tire manufacturing production line — molds and finished tires in a precision facility"
                   fill
                   className="object-cover object-center"
                   quality={85}
@@ -112,11 +112,11 @@ export default function FutureReady() {
                     <div className="flex items-center gap-3 mb-1">
                       <div className="h-px w-5 bg-gold" />
                       <span className="font-heading text-[10px] uppercase tracking-[0.25em] text-gold">
-                        Next Generation
+                        Tire Production
                       </span>
                     </div>
                     <p className="text-smoke text-xs leading-relaxed">
-                      EV-ready precision, sustainable processes, smart manufacturing
+                      Supporting next-generation tire manufacturing facilities worldwide
                     </p>
                   </div>
                 </div>
@@ -125,8 +125,8 @@ export default function FutureReady() {
               {/* Supplemental image */}
               <div className="relative aspect-[16/7] overflow-hidden group">
                 <Image
-                  src="/images/robotic-ai-machining.jpg"
-                  alt="Robotic AI machining for smart manufacturing"
+                  src="/images/cnc-machining-sparks.jpg"
+                  alt="CNC milling heads cutting precision metal components with sparks"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   quality={80}
@@ -135,7 +135,7 @@ export default function FutureReady() {
                 <div className="absolute bottom-4 left-4 flex items-center gap-2">
                   <div className="h-px w-4 bg-gold" />
                   <span className="font-heading text-[10px] uppercase tracking-widest text-gold">
-                    AI-Driven Precision
+                    Precision Machining
                   </span>
                 </div>
               </div>
