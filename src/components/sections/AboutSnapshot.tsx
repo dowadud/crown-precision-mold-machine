@@ -27,21 +27,21 @@ export default function AboutSnapshot() {
 
             <FadeIn delay={0.2}>
               <p className="text-metal text-base leading-relaxed mb-6">
-                Crown Precision Mold &amp; Machine was founded by industry veterans with
+                Crown Precision Mold and Machine was founded by industry veterans with
                 more than <span className="text-smoke font-semibold">100 years of combined experience</span> in
-                tire mold manufacturing, repair, and precision machining. Our team understands
-                the operational demands of modern tire production facilities and delivers
-                solutions focused on reliability, quality, and efficiency.
+                tire mold manufacturing, repair, refurbishment, and precision machining.
+                Our team understands the operational demands of modern tire production
+                and delivers solutions focused on reliability, quality, and performance.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.28}>
               <div className="space-y-3 mb-8">
                 {[
-                  "Deep expertise spanning the full tire mold lifecycle — from initial inspection through final certification.",
-                  "ISO 9001-aligned standards with full traceability documentation on every service.",
-                  "Strategic partnerships with global tire manufacturers including Goodyear, Bridgestone, Continental, and Pirelli.",
-                  "Advanced technology: robotic machining, AI-driven inspection, 3D scanning, and nondestructive testing.",
+                  "Full tire mold lifecycle expertise — from initial inspection and repair through final certification and release.",
+                  "ISO 9001-aligned quality standards with complete traceability documentation on every service engagement.",
+                  "Trusted by global tire manufacturers including Goodyear, Bridgestone, Continental, and Pirelli.",
+                  "Advanced capabilities: CNC precision machining, laser welding, 3D mold scanning, AI-driven inspection, and NDT.",
                 ].map((point, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />

@@ -33,7 +33,7 @@ export default function CTABanner() {
               backgroundClip: "text",
             }}
           >
-            Need a Tire Mold{" "}
+            Need a Reliable Tire Mold{" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #C89A3D 0%, #E0B45C 100%)",

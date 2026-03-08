@@ -105,9 +105,10 @@ export default function StrategicPartner() {
               </h2>
 
               <p className="text-metal text-base leading-relaxed mb-10">
-                Crown Precision Mold &amp; Machine partners with tire manufacturers to
-                extend mold life, reduce downtime, and improve production reliability
-                through advanced refurbishment, repair, and precision machining services.
+                Crown Precision Mold and Machine partners with tire manufacturers to
+                extend mold life, reduce downtime, improve tire quality, and reduce
+                replacement costs through advanced repair, refurbishment, precision
+                machining, and responsive technical support.
               </p>
             </FadeIn>
 

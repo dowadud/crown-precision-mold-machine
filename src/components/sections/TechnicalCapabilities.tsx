@@ -14,6 +14,7 @@ import {
   Activity,
   Sparkles,
   ClipboardCheck,
+  BadgeCheck,
 } from "lucide-react";
 
 const coreCapabilities = [
@@ -24,6 +25,7 @@ const coreCapabilities = [
   { icon: Activity,      label: "Non-Destructive\nTesting" },
   { icon: Sparkles,      label: "Advanced Mold\nCleaning" },
   { icon: ClipboardCheck,label: "Quality\nInspection" },
+  { icon: BadgeCheck,    label: "Certification &\nTraceability" },
 ];
 
 const capabilityGroups = [
@@ -141,7 +143,7 @@ export default function TechnicalCapabilities() {
               </span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
               {coreCapabilities.map((cap, i) => (
                 <motion.div
                   key={cap.label}
