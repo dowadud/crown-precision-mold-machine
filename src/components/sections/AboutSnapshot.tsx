@@ -38,11 +38,10 @@ export default function AboutSnapshot() {
             <FadeIn delay={0.28}>
               <div className="space-y-3 mb-8">
                 {[
-                  "Full tire mold lifecycle expertise — from initial inspection and repair through final certification and release.",
-                  "ISO 9001-aligned quality standards with complete traceability documentation on every service engagement.",
-                  "Trusted by global tire manufacturers including Goodyear, Bridgestone, Continental, and Pirelli.",
-                  "Advanced capabilities: CNC precision machining, laser welding, 3D mold scanning, AI-driven inspection, and NDT.",
-                  "The modern, high-precision alternative to legacy tire mold suppliers — built for speed, accountability, and the demands of today's production environments.",
+                  "Complete tire mold lifecycle expertise — from initial 3D inspection through precision repair, refurbishment, and certified release.",
+                  "ISO 9001-aligned quality standards, full traceability documentation, and certification records on every service engagement.",
+                  "Advanced technical capabilities: CNC precision machining, laser welding, 3D mold scanning, AI-driven inspection, and nondestructive testing.",
+                  "The modern alternative to legacy tire mold suppliers — built for precision, accountability, and the speed that production facilities demand.",
                 ].map((point, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />

@@ -75,7 +75,7 @@ export default function TrustBar() {
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 0.4 + i * 0.08 }}
-                className="font-heading font-bold text-xs uppercase tracking-widest text-steel/50 hover:text-gold/80 transition-colors duration-200 cursor-default"
+                className="font-heading font-bold text-xs uppercase tracking-widest text-steel/70 hover:text-gold transition-colors duration-200 cursor-default"
               >
                 {client}
               </motion.span>

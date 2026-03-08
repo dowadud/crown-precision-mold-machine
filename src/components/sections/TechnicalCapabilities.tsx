@@ -40,13 +40,14 @@ const capabilityGroups = [
     ],
   },
   {
-    category: "Inspection & Testing",
+    category: "Inspection & Quality",
     items: [
       "3D Coordinate Measurement (CMM)",
       "Nondestructive Testing (NDT)",
       "Ultrasonic Flaw Detection",
-      "Surface Roughness Analysis",
-      "Dimensional Tolerance Verification",
+      "AI-Driven Defect Detection",
+      "ISO 9001-Aligned Certification",
+      "Full Traceability Documentation",
     ],
   },
   {
@@ -60,40 +61,21 @@ const capabilityGroups = [
     ],
   },
   {
-    category: "Quality & Certification",
-    items: [
-      "ISO 9001-Aligned Protocols",
-      "Full Traceability Documentation",
-      "Certification & Release Records",
-      "AI-Driven Defect Detection",
-      "Performance Analytics Reporting",
-    ],
-  },
-  {
-    category: "Technology & Automation",
+    category: "Technology & Lifecycle",
     items: [
       "Robotic Machining Arms",
-      "AI Defect Detection Systems",
-      "Lean Manufacturing Principles",
       "Performance Data Analytics",
-      "Smart Manufacturing Capabilities",
-    ],
-  },
-  {
-    category: "Support & Lifecycle",
-    items: [
-      "24/7 Technical Support",
-      "Rapid-Response Agreements",
+      "Smart Manufacturing Integration",
       "Proactive Maintenance Scheduling",
-      "Mold Performance Tracking",
-      "Long-Term Partnership Programs",
+      "Rapid-Response Agreements",
+      "24/7 Technical Support",
     ],
   },
 ];
 
 export default function TechnicalCapabilities() {
   return (
-    <section className="py-24 md:py-32 bg-[#0B0B0D] relative overflow-hidden">
+    <section className="py-20 md:py-24 bg-[#0B0B0D] relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative">
@@ -200,10 +182,11 @@ export default function TechnicalCapabilities() {
         </FadeIn>
 
         {/* Full capability groups */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.04]">
           {capabilityGroups.map((cap) => (
             <motion.div key={cap.category} variants={staggerItem}>
-              <div className="border border-white/[0.06] bg-charcoal/20 p-7 h-full hover:border-gold/20 hover:bg-charcoal/40 transition-all duration-300 group">
+              <div className="bg-[#0B0B0D] p-7 h-full hover:bg-charcoal/40 transition-all duration-300 group relative">
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="flex items-center gap-3 mb-5">
                   <div className="h-px w-4 bg-gold" />
                   <h3 className="font-heading font-bold uppercase text-xs tracking-[0.2em] text-gold">
@@ -222,6 +205,7 @@ export default function TechnicalCapabilities() {
                 </ul>
               </div>
             </motion.div>
+
           ))}
         </StaggerContainer>
 

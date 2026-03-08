@@ -32,8 +32,8 @@ export default function Footer() {
             </div>
 
             <p className="text-metal text-sm leading-relaxed mb-7 max-w-sm">
-              Specialized tire mold services for global manufacturers — precision
-              repair, refurbishment, and lifecycle support.
+              Engineering-grade tire mold repair, refurbishment, and lifecycle
+              support — trusted by global tire manufacturers across five continents.
             </p>
 
             {/* Contact block */}

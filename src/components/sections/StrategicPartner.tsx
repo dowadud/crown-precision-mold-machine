@@ -21,8 +21,8 @@ const pillars = [
   },
   {
     icon: BarChart3,
-    title: "Strengthen Your Market Position",
-    body: "Lower mold-related capex, higher output quality, and reduced defect rates give your operations the cost efficiency to compete more aggressively in global tire markets.",
+    title: "Improve Cost Position & Quality",
+    body: "Lower mold-related capex, reduced scrap rates, and higher output quality improve your operational margins and strengthen your standing in competitive global tire markets.",
   },
   {
     icon: UserCheck,

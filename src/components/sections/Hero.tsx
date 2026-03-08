@@ -68,7 +68,7 @@ export default function Hero() {
           >
             <div className="h-px w-12 bg-gold" />
             <span className="font-heading font-semibold text-gold text-xs uppercase tracking-[0.3em]">
-              Precision Tire Mold Services
+              Crown Precision Mold &amp; Machine
             </span>
           </motion.div>
 
@@ -117,12 +117,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-steel/80 text-base md:text-lg leading-relaxed max-w-2xl mb-10"
+            className="text-steel/80 text-base md:text-lg leading-relaxed max-w-xl mb-10"
           >
-            Crown Precision Mold and Machine helps tire manufacturers extend
-            mold life, reduce downtime, improve quality, and maintain production
-            efficiency through expert repair, refurbishment, machining,
-            inspection, and lifecycle support.
+            Engineering-grade repair, refurbishment, and lifecycle support for
+            global tire manufacturers — backed by over 100 years of combined
+            industry expertise and ISO 9001-aligned quality systems.
           </motion.p>
 
           {/* CTAs */}
@@ -155,7 +154,12 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 1.0 }}
             className="flex flex-wrap items-center gap-6 mt-12"
           >
-            {["ISO 9001 Aligned", "100+ Years Combined Experience", "Global Tire Manufacturers"].map((badge) => (
+            {[
+              "ISO 9001-Aligned QA",
+              "100+ Years Experience",
+              "Goodyear · Bridgestone · Pirelli",
+              "5 Continents Served",
+            ].map((badge) => (
               <div key={badge} className="flex items-center gap-2">
                 <div className="w-1 h-1 rounded-full bg-gold" />
                 <span className="text-steel/60 text-xs uppercase tracking-widest font-heading">
