@@ -480,17 +480,37 @@ section{padding:120px 64px;}
 }
 .svc-card:hover .svc-num{color:rgba(255,98,0,0.12);}
 .svc-icon{
-  width:50px;height:50px;
-  border:1px solid var(--border-o);
+  width:64px;height:64px;
+  border:1px solid rgba(255,98,0,0.34);
+  background:
+    linear-gradient(135deg,rgba(255,98,0,0.13),rgba(255,255,255,0.02) 42%,rgba(0,0,0,0.28)),
+    #101114;
   display:flex;align-items:center;justify-content:center;
-  margin-bottom:26px;transition:background 0.4s,border-color 0.4s;
+  margin-bottom:28px;position:relative;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.04),0 14px 34px rgba(0,0,0,0.28);
+  transition:background 0.4s,border-color 0.4s,box-shadow 0.4s,transform 0.4s;
+}
+.svc-icon::before,.svc-icon::after{
+  content:'';position:absolute;width:12px;height:12px;border-color:rgba(255,98,0,0.65);
+  transition:border-color 0.4s;
+}
+.svc-icon::before{top:8px;left:8px;border-top:1px solid;border-left:1px solid;}
+.svc-icon::after{right:8px;bottom:8px;border-right:1px solid;border-bottom:1px solid;}
+.svc-icon-mark{
+  width:34px;height:34px;display:flex;align-items:center;justify-content:center;
+  color:var(--orange);position:relative;z-index:1;
 }
 .svc-icon svg{
-  width:22px;height:22px;stroke:var(--orange);fill:none;stroke-width:1.5;
-  transition:stroke 0.4s;
+  width:34px;height:34px;stroke:currentColor;fill:none;stroke-width:1.75;
+  stroke-linecap:round;stroke-linejoin:round;transition:stroke 0.4s,color 0.4s;
 }
-.svc-card:hover .svc-icon{background:var(--orange);border-color:var(--orange);}
-.svc-card:hover .svc-icon svg{stroke:#000;}
+.svc-card:hover .svc-icon{
+  background:linear-gradient(135deg,var(--orange),#ff8b3d);
+  border-color:var(--orange);box-shadow:0 18px 45px rgba(255,98,0,0.24);
+  transform:translateY(-2px);
+}
+.svc-card:hover .svc-icon::before,.svc-card:hover .svc-icon::after{border-color:rgba(0,0,0,0.42);}
+.svc-card:hover .svc-icon-mark{color:#050506;}
 .svc-name{
   font-family:'Barlow Condensed',sans-serif;
   font-size:20px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
@@ -1052,7 +1072,9 @@ footer{
     <div class="svc-card reveal">
       <span class="svc-num">01</span>
       <div class="svc-icon">
-        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        <span class="svc-icon-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 17l5-5 3 3 7-7"/><path d="M14 8h5v5"/><path d="M5 20h14"/><path d="M7 15l-2-2 3-3 2 2"/></svg>
+        </span>
       </div>
       <div class="svc-name">Mold Repair</div>
       <p class="svc-desc">Expert repair through precision welding, CNC machining, and surface finishing — executed strictly to your specifications. We minimize downtime and restore molds to full performance.</p>
@@ -1065,7 +1087,9 @@ footer{
     <div class="svc-card reveal">
       <span class="svc-num">02</span>
       <div class="svc-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span class="svc-icon-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 19h14"/><path d="M7 16V7h10v9"/><path d="M9 9h6"/><path d="M9 12h6"/><path d="M10 16v-2h4v2"/></svg>
+        </span>
       </div>
       <div class="svc-name">Mold Refurbishment</div>
       <p class="svc-desc">Restore molds to original design specifications by renewing components per the client's plans and standards. Achieve 25–35% cost savings vs. full replacement while extending mold life by 15%+.</p>
@@ -1078,7 +1102,9 @@ footer{
     <div class="svc-card reveal">
       <span class="svc-num">03</span>
       <div class="svc-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        <span class="svc-icon-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 8h14"/><path d="M7 8v10h10V8"/><path d="M9 12h6"/><path d="M10 15h4"/><path d="M8 5h8"/></svg>
+        </span>
       </div>
       <div class="svc-name">Mold Cleaning</div>
       <p class="svc-desc">Industrial blast cleaning, ultrasonic systems, and eco-friendly solvents ensure molds are thoroughly contaminant-free before inspection and certification. Complete traceability maintained.</p>
@@ -1091,7 +1117,9 @@ footer{
     <div class="svc-card reveal">
       <span class="svc-num">04</span>
       <div class="svc-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <span class="svc-icon-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 19h14"/><path d="M7 16h10"/><path d="M9 16V7h6v9"/><path d="M12 7V4"/><path d="M10 4h4"/><path d="M8 11h8"/></svg>
+        </span>
       </div>
       <div class="svc-name">CNC Machining</div>
       <p class="svc-desc">Precision CNC milling and turning following your exact processes and standards. We maintain the original design and guarantee the integrity and dimensional accuracy of the finished product.</p>
@@ -1104,7 +1132,9 @@ footer{
     <div class="svc-card reveal">
       <span class="svc-num">05</span>
       <div class="svc-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        <span class="svc-icon-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="5"/><path d="M15 15l4 4"/><path d="M9 11l1.5 1.5L14 9"/><path d="M4 4l2 2"/><path d="M18 4l-2 2"/></svg>
+        </span>
       </div>
       <div class="svc-name">Quality Inspection</div>
       <p class="svc-desc">Routine 3D scanning, dimensional inspection, and nondestructive testing guarantee molds are optimized for tire production. Proactive maintenance scheduling reduces unexpected failures.</p>
@@ -1117,7 +1147,9 @@ footer{
     <div class="svc-card reveal">
       <span class="svc-num">06</span>
       <div class="svc-icon">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        <span class="svc-icon-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 18h5"/><path d="M15 18h5"/><path d="M9 18a3 3 0 006 0"/><path d="M12 15V6"/><path d="M8 6h8"/><path d="M6 10h3"/><path d="M15 10h3"/></svg>
+        </span>
       </div>
       <div class="svc-name">Consulting &amp; Operations</div>
       <p class="svc-desc">Specialized consulting to implement best-practice processes and optimize workflow efficiency. We also manage full internal mold shop operations for manufacturers that prefer outsourced or embedded support.</p>
