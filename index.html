@@ -386,9 +386,9 @@ section{padding:120px 64px;}
   display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
 }
 .equipment-mini-grid img{
-  width:100%;aspect-ratio:4/3;object-fit:cover;
-  border:1px solid var(--border);background:#000;
-  filter:brightness(.78) saturate(.95);
+  width:100%;aspect-ratio:4/3;object-fit:contain;
+  border:1px solid var(--border);background:linear-gradient(135deg,#09090b,#1a1b1f);
+  filter:brightness(.94) contrast(1.04) saturate(.98);padding:10px;box-sizing:border-box;
 }
 @media(max-width:900px){.preview-inner{grid-template-columns:1fr}.equipment-mini-grid{grid-template-columns:1fr 1fr}}
 
@@ -1140,10 +1140,10 @@ footer{
       <a href="equipment.html" class="btn-solid">View Equipment Gallery</a>
     </div>
     <div class="equipment-mini-grid reveal">
-      <img src="assets/precision-machining-center.jpeg" alt="Precision machining center">
-      <img src="assets/laser-welding-machine.png" alt="Laser welding machine">
-      <img src="assets/cnc-vertical-turret-lathe.png" alt="CNC vertical turret lathe">
-      <img src="assets/fiber-laser-cleaning-system.png" alt="Fiber laser cleaning system">
+      <img src="assets/equipment-okk-cnc-machine.jpg" alt="OKK CNC machine">
+      <img src="assets/equipment-vertical-turret-lathe.jpg" alt="Vertical turret lathe">
+      <img src="assets/equipment-sharp-vertical-mill.jpg" alt="SHARP vertical mill">
+      <img src="assets/equipment-blasting-dust-collection.jpg" alt="Blasting and dust collection system">
     </div>
   </div>
 </section>

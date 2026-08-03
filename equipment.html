@@ -897,13 +897,18 @@ nav{background:rgba(6,6,8,0.94);backdrop-filter:blur(24px);-webkit-backdrop-filt
 .info-panel h2,.info-panel h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:2px;color:var(--white);margin-bottom:16px;}
 .info-panel p,.info-panel li{font-size:15px;line-height:1.8;color:var(--gray1);font-weight:300;}
 .info-panel ul{padding-left:18px;}
-.equipment-page-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.equipment-card{background:var(--bg2);border:1px solid var(--border);overflow:hidden;}
-.equipment-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;filter:brightness(.82) saturate(.95);}
-.equipment-card div{padding:18px;}
+.equipment-feature{display:grid;grid-template-columns:0.9fr 1.1fr;gap:36px;align-items:center;}
+.equipment-feature-copy p{font-size:16px;line-height:1.85;color:var(--gray1);font-weight:300;margin-top:18px;}
+.equipment-video-card{background:#050506;border:1px solid var(--border);padding:12px;box-shadow:0 30px 80px rgba(0,0,0,.35);}
+.equipment-video-card video{display:block;width:100%;max-height:680px;object-fit:contain;background:#000;}
+.equipment-page-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;}
+.equipment-card{background:var(--bg2);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;}
+.equipment-card img{display:block;width:100%;height:360px;object-fit:contain;background:linear-gradient(135deg,#09090b,#1a1b1f);filter:brightness(.96) contrast(1.04) saturate(.98);padding:12px;box-sizing:border-box;}
+.equipment-card div{padding:18px;flex:1;}
 .equipment-card h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:17px;color:var(--white);margin-bottom:8px;}
 .equipment-card p{font-size:14px;line-height:1.7;color:var(--gray1);}
-@media(max-width:900px){.page-grid,.equipment-page-grid{grid-template-columns:1fr}.page-hero,.page-section{padding-left:24px;padding-right:24px}}
+@media(max-width:1100px){.equipment-feature{grid-template-columns:1fr}.equipment-page-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.page-grid,.equipment-page-grid{grid-template-columns:1fr}.page-hero,.page-section{padding-left:24px;padding-right:24px}.equipment-card img{height:420px}.equipment-video-card video{max-height:560px}}
 
 </style>
 </head>
@@ -930,8 +935,22 @@ nav{background:rgba(6,6,8,0.94);backdrop-filter:blur(24px);-webkit-backdrop-filt
   </div>
 </section>
 <section class="page-section">
+  <div class="page-section-inner equipment-feature">
+    <div class="equipment-feature-copy">
+      <div class="page-kicker">Facility Video</div>
+      <h2 class="s-h2">SHOP FLOOR<br><span class="o">WALKTHROUGH</span></h2>
+      <p>A short visual walkthrough of CPM&amp;M equipment and facility capability. This gives prospects a cleaner sense of the real operating environment behind the machining, cleaning, welding, and mold service work.</p>
+    </div>
+    <div class="equipment-video-card">
+      <video controls playsinline preload="metadata" poster="assets/equipment-facility-walkthrough-poster.jpg" aria-label="CPM&M facility equipment walkthrough video">
+        <source src="assets/equipment-facility-walkthrough.mp4" type="video/mp4">
+        <span>CPM&amp;M facility equipment walkthrough video.</span>
+      </video>
+    </div>
+  </div>
+</section>
+<section class="page-section">
   <div class="page-section-inner equipment-page-grid">
-
     <article class="equipment-card">
       <img src="assets/tire-mold-assembly-team.jpeg" alt="Tire Mold Assembly">
       <div>
@@ -993,6 +1012,94 @@ nav{background:rgba(6,6,8,0.94);backdrop-filter:blur(24px);-webkit-backdrop-filt
       <div>
         <h3>Fiber Laser Cleaning</h3>
         <p>Non contact cleaning support for residue removal and clean to inspect workflows.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-large-blue-machine.jpg" alt="Large Shop Support System">
+      <div>
+        <h3>Large Shop Support System</h3>
+        <p>Additional facility equipment supporting mold service and production workflows.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-green-hydraulic-press.jpg" alt="Hydraulic Press">
+      <div>
+        <h3>Hydraulic Press</h3>
+        <p>Press capacity used for shop support, tooling, and production equipment workflows.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-yale-forklift.jpg" alt="Material Handling Forklift">
+      <div>
+        <h3>Material Handling Forklift</h3>
+        <p>In facility material handling for heavy equipment, molds, and shop movement.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-okk-cnc-machine.jpg" alt="OKK CNC Machine">
+      <div>
+        <h3>OKK CNC Machine</h3>
+        <p>CNC machining platform supporting mold and precision component work.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-vertical-turret-lathe.jpg" alt="Vertical Turret Lathe">
+      <div>
+        <h3>Vertical Turret Lathe</h3>
+        <p>Turning capacity for larger round tooling and mold related components.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-sharp-vertical-mill.jpg" alt="SHARP Vertical Mill">
+      <div>
+        <h3>SHARP Vertical Mill</h3>
+        <p>Manual and precision milling support for repair, fixture, and component work.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-blasting-dust-collection.jpg" alt="Blasting And Dust Collection">
+      <div>
+        <h3>Blasting And Dust Collection</h3>
+        <p>Surface preparation and cleaning support equipment for mold service workflows.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-cnc-machine-left.jpg" alt="CNC Machine Bay Left">
+      <div>
+        <h3>CNC Machine Bay Left</h3>
+        <p>Additional CNC capacity in the production equipment bay.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-cnc-machine-center.jpg" alt="CNC Machine Bay Center">
+      <div>
+        <h3>CNC Machine Bay Center</h3>
+        <p>Additional CNC capacity supporting repeatable mold service operations.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-cnc-machine-right.jpg" alt="CNC Machine Bay Right">
+      <div>
+        <h3>CNC Machine Bay Right</h3>
+        <p>Additional CNC platform for production support and component work.</p>
+      </div>
+    </article>
+
+    <article class="equipment-card">
+      <img src="assets/equipment-three-cnc-machines-overview.jpg" alt="CNC Machine Bay Overview">
+      <div>
+        <h3>CNC Machine Bay Overview</h3>
+        <p>Wider view of multi machine CNC capacity inside the facility.</p>
       </div>
     </article>
   </div>
