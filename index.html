@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crown Precision Mold & Machine | Global Tire Mold Specialists</title>
+<meta name="description" content="Crown Precision Mold & Machine — Specialized tire mold repair, refurbishment, CNC machining, and cleaning services for global manufacturers with locations in Bahia, Brazil and Rainbow City, Alabama.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+/* ========== CSS VARIABLES ========== */
+:root {
+  --bg0: #060608;
+  --bg1: #0e0e12;
+  --bg2: #141418;
+  --bg3: #1a1a20;
+  --orange: #ff6200;
+  --orange2: #ff8533;
+  --orange-dim: rgba(255,98,0,0.12);
+  --orange-glow: rgba(255,98,0,0.06);
+  --blue: #00c8ff;
+  --white: #f4f4f0;
+  --gray1: #9090a0;
+  --gray2: #50505c;
+  --gray3: #2a2a32;
+  --border: rgba(255,255,255,0.06);
+  --border-o: rgba(255,98,0,0.25);
+}
+
+/* ========== RESET ========== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  background:var(--bg0);
+  color:var(--white);
+  font-family:'Barlow',sans-serif;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* ========== NOISE ========== */
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9990;
+  opacity:0.25;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+}
+
+/* ========== CURSOR ========== */
+#cur{
+  position:fixed;width:10px;height:10px;
+  background:var(--orange);border-radius:50%;
+  pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:background 0.2s,transform 0.15s;
+}
+#cur-ring{
+  position:fixed;width:38px;height:38px;
+  border:1px solid rgba(255,98,0,0.5);border-radius:50%;
+  pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:width 0.3s,height 0.3s,border-color 0.3s,opacity 0.3s;
+}
+.cursor-xl #cur-ring{width:64px;height:64px;border-color:rgba(255,98,0,0.8);}
+.cursor-xl #cur{transform:translate(-50%,-50%) scale(1.6);}
+
+/* ========== NAVIGATION ========== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 64px;
+  transition:padding 0.4s,background 0.4s,border-color 0.4s;
+  border-bottom:1px solid transparent;
+}
+nav.stuck{
+  padding:14px 64px;
+  background:rgba(6,6,8,0.92);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border-color:var(--border);
+}
+.nav-logo{display:flex;align-items:center;gap:0;text-decoration:none;}
+.nav-logo-img{
+  height:52px;width:auto;
+  object-fit:contain;
+  /* The logo has a near-black background that blends with the nav */
+  filter:brightness(1.05) contrast(1.05);
+  transition:filter 0.3s,opacity 0.3s;
+}
+nav.stuck .nav-logo-img{
+  height:44px;
+}
+.nav-links{display:flex;gap:40px;list-style:none;}
+.nav-links a{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--gray1);text-decoration:none;
+  position:relative;transition:color 0.3s;
+}
+.nav-links a::after{
+  content:'';position:absolute;left:0;bottom:-4px;
+  width:0;height:1px;background:var(--orange);
+  transition:width 0.3s;
+}
+.nav-links a:hover{color:var(--white);}
+.nav-links a:hover::after{width:100%;}
+.nav-btn{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  background:var(--orange);color:#000;padding:11px 26px;
+  text-decoration:none;
+  clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
+  transition:background 0.3s,transform 0.3s;
+}
+.nav-btn:hover{background:var(--orange2);transform:translateY(-1px);}
+
+/* ========== HERO ========== */
+#hero{
+  position:relative;width:100%;height:100vh;min-height:680px;
+  display:flex;align-items:center;overflow:hidden;
+}
+#hero-canvas{
+  position:absolute;inset:0;width:100%;height:100%;z-index:0;
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:1;
+  background-image:
+    linear-gradient(rgba(255,98,0,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,98,0,0.04) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 80% 80% at 60% 50%,transparent 30%,black 80%);
+}
+.hero-vignette{
+  position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse 60% 80% at 10% 50%,rgba(6,6,8,0) 0%,rgba(6,6,8,0.85) 70%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 64px;
+  max-width:860px;
+}
+.hero-eyebrow{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:6px;text-transform:uppercase;
+  color:var(--orange);
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:24px;
+  opacity:0;transform:translateY(18px);
+  animation:riseIn 0.8s cubic-bezier(0.22,1,0.36,1) 0.4s forwards;
+}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--orange);}
+.hero-h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(68px,9.5vw,136px);
+  line-height:0.88;
+  color:var(--white);
+  opacity:0;transform:translateY(28px);
+  animation:riseIn 0.9s cubic-bezier(0.22,1,0.36,1) 0.6s forwards;
+}
+.hero-h1 .hi-orange{color:var(--orange);}
+.hero-h1 .hi-ghost{
+  -webkit-text-stroke:1px rgba(244,244,240,0.2);
+  color:transparent;
+}
+.hero-tagline{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(14px,2vw,18px);font-weight:400;
+  letter-spacing:6px;text-transform:uppercase;
+  color:var(--gray1);margin-top:18px;
+  opacity:0;transform:translateY(16px);
+  animation:riseIn 0.8s cubic-bezier(0.22,1,0.36,1) 0.8s forwards;
+}
+.hero-desc{
+  font-size:16px;line-height:1.8;color:var(--gray1);
+  font-weight:300;max-width:500px;margin-top:28px;
+  opacity:0;transform:translateY(16px);
+  animation:riseIn 0.8s cubic-bezier(0.22,1,0.36,1) 1.0s forwards;
+}
+.hero-ctas{
+  display:flex;gap:14px;margin-top:44px;
+  opacity:0;transform:translateY(16px);
+  animation:riseIn 0.8s cubic-bezier(0.22,1,0.36,1) 1.2s forwards;
+}
+.btn-solid{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;
+  background:var(--orange);color:#000;padding:16px 36px;
+  text-decoration:none;display:inline-block;position:relative;overflow:hidden;
+  clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);
+  transition:background 0.3s,transform 0.3s;
+}
+.btn-solid::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.22),transparent);
+  transform:translateX(-110%);transition:transform 0.55s;
+}
+.btn-solid:hover::before{transform:translateX(110%);}
+.btn-solid:hover{background:var(--orange2);transform:translateY(-2px);}
+.btn-ghost{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;
+  background:transparent;color:var(--white);padding:16px 36px;
+  text-decoration:none;display:inline-block;
+  border:1px solid var(--gray3);
+  clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);
+  transition:border-color 0.3s,color 0.3s,transform 0.3s;
+}
+.btn-ghost:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px);}
+
+/* Hero side stats */
+.hero-side-stats{
+  position:absolute;right:64px;bottom:110px;z-index:2;
+  display:flex;flex-direction:column;gap:28px;
+  opacity:0;animation:fadeIn 0.8s ease 1.5s forwards;
+}
+.hss-item{
+  display:flex;flex-direction:column;align-items:flex-end;
+  padding-right:18px;border-right:2px solid var(--orange);
+}
+.hss-num{font-family:'Bebas Neue',sans-serif;font-size:38px;line-height:1;color:var(--white);}
+.hss-lbl{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;color:var(--gray2);margin-top:2px;
+}
+
+/* Scroll cue */
+.scroll-cue{
+  position:absolute;left:64px;bottom:52px;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  opacity:0;animation:fadeIn 0.8s ease 1.7s forwards;
+}
+.scroll-cue span{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gray2);
+  writing-mode:vertical-rl;
+}
+.scroll-cue::after{
+  content:'';width:1px;height:52px;
+  background:linear-gradient(to bottom,var(--gray2),transparent);
+  animation:scrollPulse 2.2s ease infinite;
+}
+
+/* Hero ticker */
+.ticker{
+  position:absolute;bottom:0;left:0;right:0;z-index:3;
+  background:var(--orange);padding:10px 0;overflow:hidden;
+}
+.ticker-track{
+  display:flex;gap:0;white-space:nowrap;
+  animation:tickerScroll 30s linear infinite;
+}
+.ticker-item{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:13px;letter-spacing:4px;color:#000;
+  padding:0 36px;display:inline-flex;align-items:center;gap:18px;
+}
+.ticker-item::after{content:'◆';font-size:7px;}
+
+/* ========== SECTION COMMON ========== */
+section{padding:120px 64px;}
+.s-tag{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:5px;text-transform:uppercase;
+  color:var(--orange);
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:18px;
+}
+.s-tag::before{content:'';width:28px;height:1px;background:var(--orange);}
+.s-h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,5.5vw,76px);line-height:0.92;color:var(--white);
+}
+.s-h2 .o{color:var(--orange);}
+.reveal{
+  opacity:0;transform:translateY(36px);
+  transition:opacity 0.85s cubic-bezier(0.22,1,0.36,1),transform 0.85s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ========== ABOUT ========== */
+#about{background:var(--bg1);position:relative;overflow:hidden;}
+.about-watermark{
+  position:absolute;top:-20px;right:-20px;
+  font-family:'Bebas Neue',sans-serif;font-size:280px;line-height:1;
+  color:rgba(255,98,0,0.025);pointer-events:none;letter-spacing:-10px;
+  user-select:none;
+}
+.about-inner{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center;
+}
+.about-text p{
+  font-size:16px;line-height:1.85;color:var(--gray1);
+  font-weight:300;margin-top:20px;
+}
+.about-badges{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;
+}
+.abadge{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  padding:8px 18px;border:1px solid var(--border);color:var(--gray2);
+  transition:border-color 0.3s,color 0.3s;
+}
+.abadge.hi{border-color:var(--border-o);color:var(--orange);}
+.abadge:hover{border-color:var(--orange);color:var(--orange);}
+
+/* Leader card */
+.leader-card{
+  background:var(--bg2);border:1px solid var(--border);
+  padding:40px;position:relative;overflow:hidden;
+}
+.leader-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--orange),transparent);
+}
+.leader-card-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:5px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:30px;
+}
+.founders{display:flex;flex-direction:column;gap:26px;}
+.founder{display:flex;gap:18px;align-items:flex-start;}
+.f-avatar{
+  width:50px;height:50px;flex-shrink:0;
+  background:var(--orange-dim);border:1px solid var(--border-o);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--orange);
+}
+.f-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--white);line-height:1;
+}
+.f-role{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--orange);margin:4px 0 8px;
+}
+.f-contact{font-size:13px;color:var(--gray2);line-height:1.7;}
+.f-contact a{color:var(--gray2);text-decoration:none;transition:color 0.3s;}
+.f-contact a:hover{color:var(--orange);}
+.divider{height:1px;background:var(--border);margin:28px 0;}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.val{
+  display:flex;align-items:center;gap:8px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray2);
+}
+.val::before{content:'';width:5px;height:5px;background:var(--orange);border-radius:50%;flex-shrink:0;}
+
+
+
+/* ========== PRODUCTION FOOTPRINT ========== */
+#footprint{background:var(--bg0);position:relative;overflow:hidden;}
+.footprint-inner{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:center;
+}
+.footprint-copy p{
+  font-size:16px;line-height:1.85;color:var(--gray1);
+  font-weight:300;margin-top:20px;
+}
+.footprint-points{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px;
+}
+.footprint-point{
+  background:var(--bg2);border:1px solid var(--border);
+  padding:22px;min-height:132px;
+}
+.footprint-point span{
+  display:block;font-family:'Barlow Condensed',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:10px;
+}
+.footprint-point strong{
+  display:block;font-family:'Barlow Condensed',sans-serif;
+  font-size:20px;letter-spacing:2px;text-transform:uppercase;color:var(--white);
+}
+.footprint-point small{
+  display:block;color:var(--gray1);font-size:13px;line-height:1.6;margin-top:8px;
+}
+.footprint-video{
+  position:relative;overflow:hidden;background:#000;border:1px solid var(--border);
+  min-height:420px;
+}
+.footprint-video video{
+  display:block;width:100%;height:100%;min-height:420px;object-fit:cover;
+  filter:brightness(0.82) saturate(1.05);
+}
+.footprint-video::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,98,0,0.16),transparent 42%,rgba(6,6,8,0.38));
+}
+@media(max-width:1100px){
+  .footprint-inner{grid-template-columns:1fr;}
+}
+@media(max-width:720px){
+  .footprint-points{grid-template-columns:1fr;}
+  .footprint-video,.footprint-video video{min-height:300px;}
+}
+
+/* ========== SERVICES ========== */
+#services{background:var(--bg0);}
+.services-top{
+  max-width:1280px;margin:0 auto 56px;
+  display:flex;justify-content:space-between;align-items:flex-end;gap:40px;
+}
+.services-top-right{
+  max-width:360px;font-size:15px;line-height:1.8;
+  color:var(--gray1);font-weight:300;
+}
+.svcs-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+}
+.svc-card{
+  background:var(--bg2);border:1px solid var(--border);
+  padding:44px 38px;position:relative;overflow:hidden;
+  transition:border-color 0.4s,transform 0.4s;cursor:none;
+}
+.svc-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--orange-glow),transparent 60%);
+  opacity:0;transition:opacity 0.4s;
+}
+.svc-card::after{
+  content:'';position:absolute;top:0;left:0;
+  width:0;height:2px;background:var(--orange);
+  transition:width 0.4s;
+}
+.svc-card:hover{border-color:var(--border-o);}
+.svc-card:hover::before{opacity:1;}
+.svc-card:hover::after{width:100%;}
+.svc-num{
+  position:absolute;top:18px;right:22px;
+  font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:1;
+  color:rgba(255,98,0,0.06);transition:color 0.4s;
+}
+.svc-card:hover .svc-num{color:rgba(255,98,0,0.12);}
+.svc-icon{
+  width:50px;height:50px;
+  border:1px solid var(--border-o);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:26px;transition:background 0.4s,border-color 0.4s;
+}
+.svc-icon svg{
+  width:22px;height:22px;stroke:var(--orange);fill:none;stroke-width:1.5;
+  transition:stroke 0.4s;
+}
+.svc-card:hover .svc-icon{background:var(--orange);border-color:var(--orange);}
+.svc-card:hover .svc-icon svg{stroke:#000;}
+.svc-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:20px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--white);margin-bottom:14px;
+}
+.svc-desc{font-size:14px;line-height:1.75;color:var(--gray1);font-weight:300;}
+.svc-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px;}
+.svc-pill{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--orange);background:var(--orange-dim);padding:4px 12px;
+}
+
+/* ========== CAROUSEL ========== */
+#equipment{
+  background:var(--bg0);
+  padding:0;          /* no section padding — full bleed */
+  position:relative;
+  overflow:hidden;
+}
+.carousel-wrap{
+  position:relative;
+  width:100%;
+  height:72vh;
+  min-height:480px;
+  overflow:hidden;
+  background:#000;
+}
+
+/* Track holds all slides side-by-side */
+.carousel-track{
+  display:flex;
+  width:100%;
+  height:100%;
+  transition:transform 0.85s cubic-bezier(0.77,0,0.18,1);
+}
+.carousel-slide{
+  position:relative;
+  min-width:100%;
+  height:100%;
+  overflow:hidden;
+}
+.carousel-slide img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center;
+  transform:scale(1.08);           /* slight zoom out on inactive */
+  transition:transform 6s ease, filter 0.85s ease;
+  filter:brightness(0.55) saturate(0.8);
+}
+.carousel-slide.active img{
+  transform:scale(1);              /* Ken-Burns zoom-in on active */
+  filter:brightness(0.72) saturate(1);
+}
+
+/* Dark gradient overlays */
+.carousel-slide::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(
+    to right,
+    rgba(6,6,8,0.55) 0%,
+    transparent 50%,
+    rgba(6,6,8,0.3) 100%
+  );
+}
+.carousel-caption{
+  position:absolute;left:64px;bottom:56px;z-index:2;
+  font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:var(--white);
+  background:rgba(6,6,8,0.68);border:1px solid var(--border);padding:10px 16px;
+}
+.carousel-slide::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:160px;z-index:1;
+  background:linear-gradient(to top,rgba(6,6,8,0.9),transparent);
+}
+
+/* Prev / Next arrows */
+.carousel-btn{
+  position:absolute;top:50%;z-index:10;
+  transform:translateY(-50%);
+  width:52px;height:52px;
+  background:rgba(255,98,0,0.12);
+  border:1px solid rgba(255,98,0,0.35);
+  color:var(--white);font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:none;
+  transition:background 0.3s,border-color 0.3s,transform 0.3s;
+  backdrop-filter:blur(6px);
+}
+.carousel-btn:hover{
+  background:var(--orange);border-color:var(--orange);
+  transform:translateY(-50%) scale(1.08);
+}
+.carousel-prev{left:32px;}
+.carousel-next{right:32px;}
+
+/* Dot indicators */
+.carousel-dots{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+  z-index:10;display:flex;gap:8px;align-items:center;
+}
+.carousel-dot{
+  width:28px;height:3px;
+  background:rgba(255,255,255,0.25);
+  cursor:none;
+  transition:background 0.3s,width 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+.carousel-dot.active{
+  background:var(--orange);
+  width:48px;
+}
+
+/* Progress bar */
+.carousel-progress{
+  position:absolute;bottom:0;left:0;height:2px;z-index:10;
+  background:var(--orange);width:0%;
+  transition:width linear;
+}
+
+/* Counter label */
+.carousel-counter{
+  position:absolute;top:28px;right:40px;z-index:10;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:4px;
+  color:rgba(255,255,255,0.5);
+}
+.carousel-counter b{color:var(--orange);}
+
+/* ========== CAPABILITIES ========== */
+#capabilities{background:var(--bg0);position:relative;overflow:hidden;}
+.cap-inner{max-width:1280px;margin:0 auto;}
+.cap-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;margin-top:60px;
+}
+.cap-list{display:flex;flex-direction:column;gap:2px;}
+
+/* Accordion item wrapper */
+.cap-item{
+  background:var(--bg2);border:1px solid var(--border);
+  position:relative;overflow:hidden;
+  transition:border-color 0.35s;
+}
+.cap-item.open{border-color:var(--border-o);}
+.cap-item::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:3px;background:var(--orange);
+  transform:scaleY(0);transform-origin:top;
+  transition:transform 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+.cap-item.open::before{transform:scaleY(1);}
+
+/* Row (clickable header) */
+.cap-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 22px 18px 28px;
+  cursor:none;position:relative;z-index:1;
+  transition:background 0.3s;
+  user-select:none;
+}
+.cap-row:hover{background:rgba(255,98,0,0.04);}
+.cap-item.open .cap-row{background:rgba(255,98,0,0.06);}
+.cap-left{display:flex;align-items:center;gap:14px;}
+.cap-sq{
+  width:7px;height:7px;background:var(--orange);flex-shrink:0;
+  transition:transform 0.3s;
+}
+.cap-item.open .cap-sq{transform:rotate(45deg);}
+.cap-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--white);transition:color 0.3s;
+}
+.cap-item.open .cap-name{color:var(--orange);}
+
+/* Arrow icon */
+.cap-arr{
+  width:28px;height:28px;flex-shrink:0;
+  border:1px solid var(--border);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gray2);font-size:14px;
+  transition:transform 0.4s cubic-bezier(0.22,1,0.36,1),
+             border-color 0.3s,color 0.3s,background 0.3s;
+}
+.cap-item.open .cap-arr{
+  transform:rotate(45deg);
+  border-color:var(--orange);color:var(--orange);
+  background:rgba(255,98,0,0.1);
+}
+
+/* Expandable body */
+.cap-body{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.45s cubic-bezier(0.22,1,0.36,1);
+}
+.cap-item.open .cap-body{max-height:260px;}
+.cap-body-inner{
+  padding:0 28px 22px 49px; /* align text under the name */
+  border-top:1px solid var(--border);
+}
+.cap-body-desc{
+  font-size:14px;line-height:1.8;color:var(--gray1);
+  font-weight:300;padding-top:16px;
+}
+.cap-body-pills{
+  display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;
+}
+.cap-body-pill{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--orange);background:var(--orange-dim);padding:4px 11px;
+}
+
+.cap-right-col{}
+.cap-big{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(58px,7vw,96px);line-height:0.88;color:var(--white);margin-bottom:30px;
+}
+.cap-big .o{color:var(--orange);}
+.cap-p{font-size:15px;line-height:1.85;color:var(--gray1);font-weight:300;margin-bottom:22px;}
+.cert{
+  display:inline-flex;align-items:center;gap:14px;
+  background:var(--orange-dim);border:1px solid var(--border-o);padding:14px 22px;
+}
+.cert-ico{
+  font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--orange);letter-spacing:2px;
+}
+.cert-lbl{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:var(--gray1);
+}
+
+/* ========== STATS ========== */
+#stats{background:var(--orange);padding:72px 64px;}
+.stats-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.stat-item{
+  padding:36px 40px;text-align:center;
+  border-right:1px solid rgba(0,0,0,0.12);
+}
+.stat-item:last-child{border-right:none;}
+.stat-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:80px;line-height:1;color:#000;display:block;
+}
+.stat-num.static{font-size:72px;}
+.stat-suf{font-size:48px;}
+.stat-lbl{
+  font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:rgba(0,0,0,0.55);margin-top:6px;
+}
+
+/* ========== CLIENTS ========== */
+#clients{background:var(--bg1);}
+.clients-inner{max-width:1280px;margin:0 auto;}
+.clients-head{text-align:center;margin-bottom:56px;}
+.clients-head .s-tag{justify-content:center;}
+.clients-head .s-tag::before{display:none;}
+.clients-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
+}
+.cl-card{
+  background:var(--bg2);border:1px solid var(--border);
+  padding:44px 32px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;position:relative;overflow:hidden;
+  transition:border-color 0.4s,transform 0.4s;cursor:none;
+}
+.cl-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 80% at 50% 50%,var(--orange-glow),transparent 70%);
+  opacity:0;transition:opacity 0.4s;
+}
+.cl-card:hover::before{opacity:1;}
+.cl-card:hover{border-color:var(--border-o);transform:translateY(-5px);}
+.cl-icon{
+  width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--orange);
+  margin-bottom:18px;transition:background 0.3s,border-color 0.3s,color 0.3s;
+}
+.cl-card:hover .cl-icon{background:var(--orange);border-color:var(--orange);color:#000;}
+.cl-name{
+  font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:3px;
+  color:var(--white);margin-bottom:7px;transition:color 0.3s;
+}
+.cl-card:hover .cl-name{color:var(--orange);}
+.cl-type{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;color:var(--gray2);
+}
+
+/* ========== WHY US ========== */
+#why{background:var(--bg0);}
+.why-inner{max-width:1280px;margin:0 auto;}
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px;
+}
+.why-card{
+  padding:40px 36px;background:var(--bg2);border:1px solid var(--border);
+  position:relative;overflow:hidden;transition:border-color 0.4s;
+}
+.why-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--orange);transform:scaleX(0);transform-origin:left;
+  transition:transform 0.45s;
+}
+.why-card:hover{border-color:var(--border-o);}
+.why-card:hover::after{transform:scaleX(1);}
+.why-num{
+  font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;
+  color:var(--orange);margin-bottom:16px;
+}
+.why-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--white);margin-bottom:12px;
+}
+.why-desc{font-size:14px;line-height:1.75;color:var(--gray1);font-weight:300;}
+
+/* ========== CONTACT ========== */
+#contact{background:var(--bg1);position:relative;overflow:hidden;}
+#contact::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--orange),transparent);
+}
+.contact-inner{max-width:1280px;margin:0 auto;}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:80px;margin-top:60px;
+}
+.cinfo{display:flex;flex-direction:column;gap:30px;}
+.ci{display:flex;gap:18px;align-items:flex-start;}
+.ci-ico{
+  width:46px;height:46px;flex-shrink:0;
+  border:1px solid var(--border-o);
+  display:flex;align-items:center;justify-content:center;
+}
+.ci-ico svg{width:18px;height:18px;stroke:var(--orange);fill:none;stroke-width:1.5;}
+.ci-lbl{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;color:var(--gray2);margin-bottom:6px;display:block;
+}
+.ci-val{font-size:15px;color:var(--white);line-height:1.7;}
+.ci-val a{color:var(--white);text-decoration:none;transition:color 0.3s;}
+.ci-val a:hover{color:var(--orange);}
+
+/* Form */
+.cform{display:flex;flex-direction:column;gap:2px;}
+.form-row2{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.fi input,.fi textarea,.fi select{
+  width:100%;background:var(--bg2);border:1px solid var(--border);
+  color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;
+  padding:18px 20px;outline:none;transition:border-color 0.3s;
+  -webkit-appearance:none;appearance:none;
+}
+.fi textarea{height:120px;resize:none;}
+.fi input:focus,.fi textarea:focus,.fi select:focus{border-color:var(--orange);}
+.fi input::placeholder,.fi textarea::placeholder{color:var(--gray2);}
+.fi select option{background:var(--bg2);color:var(--white);}
+.form-submit{
+  font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:3.5px;text-transform:uppercase;
+  background:var(--orange);color:#000;border:none;padding:20px;
+  cursor:pointer;width:100%;
+  clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);
+  transition:background 0.3s,transform 0.3s;
+}
+.form-submit:hover{background:var(--orange2);transform:translateY(-2px);}
+
+/* ========== FOOTER ========== */
+footer{
+  background:var(--bg0);border-top:1px solid var(--border);
+  padding:36px 64px;
+}
+.footer-inner{
+  max-width:1280px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-copy{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;
+  letter-spacing:2px;text-transform:uppercase;color:var(--gray2);
+}
+.footer-links{display:flex;gap:30px;}
+.footer-links a{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;
+  letter-spacing:2px;text-transform:uppercase;color:var(--gray2);
+  text-decoration:none;transition:color 0.3s;
+}
+.footer-links a:hover{color:var(--orange);}
+
+/* ========== ANIMATIONS ========== */
+@keyframes riseIn{to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{to{opacity:1;}}
+@keyframes tickerScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@keyframes scrollPulse{0%,100%{opacity:0.6;transform:scaleY(1);}50%{opacity:0.1;transform:scaleY(0.4);}}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:1100px){
+  nav,section,footer{padding-left:40px;padding-right:40px;}
+  .about-inner,.contact-grid,.cap-grid{grid-template-columns:1fr;gap:48px;}
+  .svcs-grid{grid-template-columns:repeat(2,1fr);}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .clients-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-side-stats{display:none;}
+  .services-top{flex-direction:column;gap:16px;}
+  .services-top-right{max-width:100%;}
+  nav{padding:18px 40px;}
+  nav.stuck{padding:12px 40px;}
+}
+@media(max-width:720px){
+  nav{padding:14px 24px;}
+  nav.stuck{padding:10px 24px;}
+  section{padding:80px 24px;}
+  footer{padding:28px 24px;}
+  .nav-links{display:none;}
+  .svcs-grid,.stats-grid,.clients-grid,.why-grid{grid-template-columns:1fr;}
+  .form-row2{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;gap:18px;text-align:center;}
+  .hero-content{padding:0 24px;}
+  .scroll-cue{left:24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<!-- ======== NAVIGATION ======== -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <img src="assets/logo.png" alt="Crown Precision Mold &amp; Machine" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#footprint">Footprint</a></li>
+    <li><a href="#equipment">Equipment</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-btn">Get a Quote</a>
+</nav>
+
+<!-- ======== HERO ======== -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Two Production Facilities &nbsp;·&nbsp; Alabama + Brazil &nbsp;·&nbsp; ISO 9001 Certified</div>
+    <h1 class="hero-h1">
+      CROWN<br>
+      <span class="hi-orange">PRECISION</span><br>
+      <span class="hi-ghost">MOLD &amp;</span><br>
+      MACHINE
+    </h1>
+    <p class="hero-tagline">Rainbow City, Alabama &nbsp;·&nbsp; Bahia, Brazil</p>
+    <p class="hero-desc">
+      Elite tire mold maintenance, repair, refurbishment, and CNC machining services —
+      deployed across 5 continents. Trusted by the world's most demanding tire producers
+      to deliver results with zero compromise.
+    </p>
+    <div class="hero-ctas">
+      <a href="#services" class="btn-solid">Explore Services</a>
+      <a href="#contact" class="btn-ghost">Request a Quote</a>
+    </div>
+  </div>
+
+  <div class="hero-side-stats">
+    <div class="hss-item">
+      <span class="hss-num">30+</span>
+      <span class="hss-lbl">Yrs Combined Experience</span>
+    </div>
+    <div class="hss-item">
+      <span class="hss-num">5</span>
+      <span class="hss-lbl">Continents Served</span>
+    </div>
+    <div class="hss-item">
+      <span class="hss-num">24/7</span>
+      <span class="hss-lbl">Global Support</span>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span>Scroll</span></div>
+
+</section>
+
+<!-- ======== ABOUT ======== -->
+<section id="about">
+  <div class="about-watermark">CPM</div>
+  <div class="about-inner">
+    <div class="about-text reveal">
+      <div class="s-tag">About Crown Precision</div>
+      <h2 class="s-h2">BUILT ON<br><span class="o">DECADES</span><br>OF MASTERY</h2>
+      <p>
+        Founded by industry veterans with over 30 years of combined experience, Crown Precision Mold &amp; Machine operates two production facilities: one in Rainbow City, Alabama and one in Bahia, Brazil. This footprint supports tire producers that need specialized mold service capacity across North America and Brazil.
+      </p>
+      <p>
+        Our leadership team has personally executed every process in our portfolio: mold design, CNC machining, laser welding, ultrasonic cleaning, and precision inspection. That hands-on experience helps the team follow customer procedures, identify repair risks early, and keep mold service decisions grounded in shop-floor reality.
+      </p>
+      <p>
+        Our mission is to deliver specialized mold and machinery services with documented quality, practical speed, and reliable execution for production-critical tire tooling.
+      </p>
+      <div class="about-badges">
+        <span class="abadge hi">ISO 9001 Certified</span>
+        <span class="abadge">5 Continents</span>
+        <span class="abadge">30+ Yrs Experience</span>
+        <span class="abadge">Global Reach</span>
+        <span class="abadge">24/7 Support</span>
+        <span class="abadge">Rainbow City, Alabama</span>
+        <span class="abadge">Bahia, Brazil</span>
+        <span class="abadge">Two Production Facilities</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="leader-card">
+        <div class="leader-card-title">Leadership Team</div>
+        <div class="founders">
+          <div class="founder">
+            <div class="f-avatar">MS</div>
+            <div>
+              <div class="f-name">Mario Sloof</div>
+              <div class="f-role">Chief Executive Officer</div>
+              <div class="f-contact">Leadership contact through main office</div>
+            </div>
+          </div>
+          <div class="founder" style="margin-top:4px;padding-top:26px;border-top:1px solid var(--border);">
+            <div class="f-avatar">MR</div>
+            <div>
+              <div class="f-name">Marco Restrepo</div>
+              <div class="f-role">Chief Operating Officer</div>
+              <div class="f-contact">Leadership contact through main office</div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="values-grid">
+          <div class="val">Quality Commitment</div>
+          <div class="val">Integrity</div>
+          <div class="val">Teamwork</div>
+          <div class="val">Innovation</div>
+          <div class="val">Continuous Improvement</div>
+          <div class="val">Customer Focus</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ======== PRODUCTION FOOTPRINT ======== -->
+<section id="footprint">
+  <div class="footprint-inner">
+    <div class="footprint-copy reveal">
+      <div class="s-tag">Production Footprint</div>
+      <h2 class="s-h2">TWO<br><span class="o">FACILITIES</span><br>BUILT FOR SPEED</h2>
+      <p>
+        CPM&amp;M operates two production facilities: Rainbow City, Alabama and Bahia, Brazil. The structure gives tire manufacturers regional service capacity for mold repair, refurbishment, cleaning, CNC machining, and inspection.
+      </p>
+      <p>
+        The value is practical: faster routing, more capacity, and a footprint aligned with tire production across North America and Brazil.
+      </p>
+      <div class="footprint-points">
+        <div class="footprint-point">
+          <span>United States</span>
+          <strong>Rainbow City, Alabama</strong>
+          <small>1059 Sutton Bridge Rd<br>Rainbow City, AL 35906</small>
+        </div>
+        <div class="footprint-point">
+          <span>Brazil</span>
+          <strong>Bahia, Brazil</strong>
+          <small>Bahia, Brazil<br>Exact facility address available upon request.</small>
+        </div>
+      </div>
+    </div>
+    <div class="footprint-video reveal">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/production-footprint-map-poster.jpg" aria-label="Map showing CPM&M production facilities in Rainbow City, Alabama and Bahia, Brazil">
+        <source src="assets/production-footprint-map.mp4" type="video/mp4">
+        <span>Production footprint map showing CPM&amp;M facilities in Rainbow City, Alabama and Bahia, Brazil.</span>
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ======== SERVICES ======== -->
+<section id="services">
+  <div class="services-top reveal">
+    <div>
+      <div class="s-tag">What We Do</div>
+      <h2 class="s-h2">OUR<br><span class="o">SERVICES</span></h2>
+    </div>
+    <p class="services-top-right">
+      Comprehensive tire mold solutions — from routine maintenance to full refurbishment.
+      Every process executed to your exact standards with speed and precision.
+    </p>
+  </div>
+  <div class="svcs-grid">
+    <div class="svc-card reveal">
+      <span class="svc-num">01</span>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <div class="svc-name">Mold Repair</div>
+      <p class="svc-desc">Expert repair through precision welding, CNC machining, and surface finishing — executed strictly to your specifications. We minimize downtime and restore molds to full performance.</p>
+      <div class="svc-pills">
+        <span class="svc-pill">Laser Welding</span>
+        <span class="svc-pill">CNC Machining</span>
+        <span class="svc-pill">Surface Finishing</span>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-num">02</span>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="svc-name">Mold Refurbishment</div>
+      <p class="svc-desc">Restore molds to original design specifications by renewing components per the client's plans and standards. Achieve 25–35% cost savings vs. full replacement while extending mold life by 15%+.</p>
+      <div class="svc-pills">
+        <span class="svc-pill">Component Renewal</span>
+        <span class="svc-pill">Cost Reduction</span>
+        <span class="svc-pill">Life Extension</span>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-num">03</span>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+      </div>
+      <div class="svc-name">Mold Cleaning</div>
+      <p class="svc-desc">Industrial blast cleaning, ultrasonic systems, and eco-friendly solvents ensure molds are thoroughly contaminant-free before inspection and certification. Complete traceability maintained.</p>
+      <div class="svc-pills">
+        <span class="svc-pill">Blast Cleaning</span>
+        <span class="svc-pill">Ultrasonic</span>
+        <span class="svc-pill">Eco-Friendly</span>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-num">04</span>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="svc-name">CNC Machining</div>
+      <p class="svc-desc">Precision CNC milling and turning following your exact processes and standards. We maintain the original design and guarantee the integrity and dimensional accuracy of the finished product.</p>
+      <div class="svc-pills">
+        <span class="svc-pill">Vertical Milling</span>
+        <span class="svc-pill">Lathe Turning</span>
+        <span class="svc-pill">Drilling</span>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-num">05</span>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <div class="svc-name">Quality Inspection</div>
+      <p class="svc-desc">Routine 3D scanning, dimensional inspection, and nondestructive testing guarantee molds are optimized for tire production. Proactive maintenance scheduling reduces unexpected failures.</p>
+      <div class="svc-pills">
+        <span class="svc-pill">3D Scanning</span>
+        <span class="svc-pill">NDT Testing</span>
+        <span class="svc-pill">Documentation</span>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-num">06</span>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="svc-name">Consulting &amp; Operations</div>
+      <p class="svc-desc">Specialized consulting to implement best-practice processes and optimize workflow efficiency. We also manage full internal mold shop operations for manufacturers that prefer outsourced or embedded support.</p>
+      <div class="svc-pills">
+        <span class="svc-pill">Process Optimization</span>
+        <span class="svc-pill">Shop Management</span>
+        <span class="svc-pill">Workflow</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CAROUSEL ======== -->
+<section id="equipment">
+  <div class="carousel-wrap" id="carousel">
+
+    <div class="carousel-track" id="carousel-track">
+      <div class="carousel-slide active"><img src="assets/tire-mold-assembly-team.jpeg" alt="Tire mold assembly team at work"><span class="carousel-caption">Tire Mold Assembly</span></div>
+      <div class="carousel-slide"><img src="assets/open-tire-mold-interior.jpeg" alt="Open tire mold interior close-up"><span class="carousel-caption">Open Tire Mold Interior</span></div>
+      <div class="carousel-slide"><img src="assets/precision-machining-center.jpeg" alt="Technician operating precision machining center"><span class="carousel-caption">Precision Machining Center</span></div>
+      <div class="carousel-slide"><img src="assets/cnc-mold-components-workbench.jpeg" alt="Precision CNC mold components on workbench"><span class="carousel-caption">CNC Mold Components</span></div>
+      <div class="carousel-slide"><img src="assets/tire-mold-before-after-refurbishment.png" alt="Tire mold before and after refurbishment"><span class="carousel-caption">Before and After Refurbishment</span></div>
+      <div class="carousel-slide"><img src="assets/laser-welding-machine.png" alt="Precision laser welding machine"><span class="carousel-caption">Precision Laser Welding</span></div>
+      <div class="carousel-slide"><img src="assets/cnc-vertical-turret-lathe.png" alt="CNC vertical turret lathe"><span class="carousel-caption">CNC Vertical Turret Lathe</span></div>
+      <div class="carousel-slide"><img src="assets/fiber-laser-cleaning-system.png" alt="Fiber laser cleaning system"><span class="carousel-caption">Fiber Laser Cleaning</span></div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-btn carousel-prev" id="car-prev" aria-label="Previous">&#8592;</button>
+    <button class="carousel-btn carousel-next" id="car-next" aria-label="Next">&#8594;</button>
+
+    <!-- Dots -->
+    <div class="carousel-dots" id="car-dots"></div>
+
+    <!-- Progress bar -->
+    <div class="carousel-progress" id="car-progress"></div>
+
+    <!-- Counter -->
+    <div class="carousel-counter"><b id="car-cur">01</b> / <span id="car-tot">08</span></div>
+
+  </div>
+</section>
+
+<!-- ======== CAPABILITIES ======== -->
+<section id="capabilities">
+  <div class="cap-inner">
+    <div class="reveal">
+      <div class="s-tag">Technical Expertise</div>
+      <h2 class="s-h2">PRECISION<br><span class="o">CAPABILITIES</span></h2>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-list reveal">
+
+        <div class="cap-item open">
+          <div class="cap-row">
+            <div class="cap-left"><div class="cap-sq"></div><span class="cap-name">CNC Machining &amp; Milling</span></div>
+            <span class="cap-arr">+</span>
+          </div>
+          <div class="cap-body"><div class="cap-body-inner">
+            <p class="cap-body-desc">Precision multi-axis CNC machining restores your mold geometry to exacting tolerances. We follow your part programs, processes, and quality standards exactly — ensuring every dimension is held to spec, every run. Ideal for complex tread patterns, undercuts, and custom mold components.</p>
+            <div class="cap-body-pills"><span class="cap-body-pill">Multi-Axis</span><span class="cap-body-pill">Tight Tolerances</span><span class="cap-body-pill">OEM Spec Compliant</span><span class="cap-body-pill">Custom Components</span></div>
+          </div></div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-row">
+            <div class="cap-left"><div class="cap-sq"></div><span class="cap-name">Laser Welding</span></div>
+            <span class="cap-arr">+</span>
+          </div>
+          <div class="cap-body"><div class="cap-body-inner">
+            <p class="cap-body-desc">High-energy laser welding repairs localized mold damage — cracks, chips, wear on tread features and parting lines — with minimal heat distortion to surrounding material. The focused beam preserves mold hardness and eliminates the warping risk of conventional MIG or TIG methods.</p>
+            <div class="cap-body-pills"><span class="cap-body-pill">Minimal Heat Distortion</span><span class="cap-body-pill">Parting Line Repair</span><span class="cap-body-pill">Preserves Hardness</span><span class="cap-body-pill">Micro-Precision</span></div>
+          </div></div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-row">
+            <div class="cap-left"><div class="cap-sq"></div><span class="cap-name">Precision Grinding</span></div>
+            <span class="cap-arr">+</span>
+          </div>
+          <div class="cap-body"><div class="cap-body-inner">
+            <p class="cap-body-desc">Surface and cylindrical grinding restores critical mold surfaces to mirror-finish tolerances after welding, wear, or refurbishment. We eliminate scoring, surface fatigue, and dimensional drift — returning parting faces, back plates, and cavity inserts to like-new accuracy.</p>
+            <div class="cap-body-pills"><span class="cap-body-pill">Mirror Finish</span><span class="cap-body-pill">Flatness Restoration</span><span class="cap-body-pill">Post-Weld Finishing</span><span class="cap-body-pill">Cylindrical Grinding</span></div>
+          </div></div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-row">
+            <div class="cap-left"><div class="cap-sq"></div><span class="cap-name">Ultrasonic Cleaning</span></div>
+            <span class="cap-arr">+</span>
+          </div>
+          <div class="cap-body"><div class="cap-body-inner">
+            <p class="cap-body-desc">Industrial ultrasonic baths combined with eco-friendly solvents penetrate every cavity, vent, groove, and blind hole — dissolving release agents, rubber residue, and oxidation that manual or pressure cleaning can't reach. Molds emerge fully contaminant-free and certified production-ready.</p>
+            <div class="cap-body-pills"><span class="cap-body-pill">Deep Cavity Clean</span><span class="cap-body-pill">Eco-Friendly Solvents</span><span class="cap-body-pill">Vent Clearing</span><span class="cap-body-pill">Certified Clean</span></div>
+          </div></div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-row">
+            <div class="cap-left"><div class="cap-sq"></div><span class="cap-name">3D Scanning &amp; Inspection</span></div>
+            <span class="cap-arr">+</span>
+          </div>
+          <div class="cap-body"><div class="cap-body-inner">
+            <p class="cap-body-desc">Full-surface 3D scanning captures dimensional deviations down to microns, comparing every mold component against original CAD data or golden samples. Catch wear, deformation, and out-of-tolerance conditions before they reach production — with complete digital documentation for traceability.</p>
+            <div class="cap-body-pills"><span class="cap-body-pill">CAD Comparison</span><span class="cap-body-pill">Micron Accuracy</span><span class="cap-body-pill">Full Traceability</span><span class="cap-body-pill">Pre-Production Gate</span></div>
+          </div></div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-row">
+            <div class="cap-left"><div class="cap-sq"></div><span class="cap-name">Nondestructive Testing (NDT)</span></div>
+            <span class="cap-arr">+</span>
+          </div>
+          <div class="cap-body"><div class="cap-body-inner">
+            <p class="cap-body-desc">Advanced NDT methods — including dye penetrant inspection and magnetic particle testing — detect subsurface cracks, voids, and fatigue points invisible to the naked eye. Prevent catastrophic mold failure in production before it happens, protecting your output quality and your DOT compliance record.</p>
+            <div class="cap-body-pills"><span class="cap-body-pill">Dye Penetrant</span><span class="cap-body-pill">Magnetic Particle</span><span class="cap-body-pill">Subsurface Defects</span><span class="cap-body-pill">DOT Compliance</span></div>
+          </div></div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-row">
+            <div class="cap-left"><div class="cap-sq"></div><span class="cap-name">Fiber Laser Cleaning</span></div>
+            <span class="cap-arr">+</span>
+          </div>
+          <div class="cap-body"><div class="cap-body-inner">
+            <p class="cap-body-desc">Contactless fiber laser ablation removes rubber residue, oxidation, release agent buildup, and coatings from mold surfaces without any abrasion, chemicals, or mechanical contact. Cavity detail and dimensional integrity are fully preserved — no part distortion, no consumables, no surface damage.</p>
+            <div class="cap-body-pills"><span class="cap-body-pill">Zero-Contact</span><span class="cap-body-pill">No Abrasion</span><span class="cap-body-pill">Detail Preserved</span><span class="cap-body-pill">Chemical-Free</span></div>
+          </div></div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-row">
+            <div class="cap-left"><div class="cap-sq"></div><span class="cap-name">Blast Surface Treatment</span></div>
+            <span class="cap-arr">+</span>
+          </div>
+          <div class="cap-body"><div class="cap-body-inner">
+            <p class="cap-body-desc">Controlled media blasting creates precise surface profiles across complex mold geometries — removing scale, rust, and contamination uniformly while preparing surfaces for re-coating, welding, or plating. We select media type, pressure, and angle to protect cavity detail and meet your finish specifications.</p>
+            <div class="cap-body-pills"><span class="cap-body-pill">Controlled Profile</span><span class="cap-body-pill">Pre-Coat Prep</span><span class="cap-body-pill">Scale Removal</span><span class="cap-body-pill">Complex Geometries</span></div>
+          </div></div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-row">
+            <div class="cap-left"><div class="cap-sq"></div><span class="cap-name">Mold Assembly &amp; Lubrication</span></div>
+            <span class="cap-arr">+</span>
+          </div>
+          <div class="cap-body"><div class="cap-body-inner">
+            <p class="cap-body-desc">Precise reassembly follows your OEM procedures, torque specifications, and quality control checkpoints — no shortcuts, no improvisation. Correct application of approved lubricants to all sliding surfaces, vents, guide pins, and parting lines ensures optimal mold function and extended service intervals between maintenance cycles.</p>
+            <div class="cap-body-pills"><span class="cap-body-pill">OEM Procedures</span><span class="cap-body-pill">Torque Certified</span><span class="cap-body-pill">Approved Lubricants</span><span class="cap-body-pill">QC Documented</span></div>
+          </div></div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-row">
+            <div class="cap-left"><div class="cap-sq"></div><span class="cap-name">Performance Analytics</span></div>
+            <span class="cap-arr">+</span>
+          </div>
+          <div class="cap-body"><div class="cap-body-inner">
+            <p class="cap-body-desc">We track cycle counts, repair history, dimensional drift, and failure modes for every mold in your fleet — building a living performance record that enables predictive maintenance scheduling. Reduce unplanned downtime, prioritize refurbishment before failure, and maximize production yield with data-driven insights.</p>
+            <div class="cap-body-pills"><span class="cap-body-pill">Predictive Maintenance</span><span class="cap-body-pill">Cycle Tracking</span><span class="cap-body-pill">Drift Analysis</span><span class="cap-body-pill">Yield Optimization</span></div>
+          </div></div>
+        </div>
+
+      </div>
+      <div class="cap-right-col reveal">
+        <div class="cap-big">PROCESS<br>DISCI<span class="o">PLINE</span></div>
+        <p class="cap-p">
+          Every process at Crown Precision is executed with meticulous attention to detail. Our team has personally mastered each technique — from the first disassembly to final certification. The objective is simple: meet the customer specification, document the work, and return the mold with confidence.
+        </p>
+        <p class="cap-p">
+          With 30+ years of combined expertise and a commitment to continuous improvement, our process discipline supports faster repair decisions, documented quality control, and more predictable mold maintenance.
+        </p>
+        <div class="cert">
+          <span class="cert-ico">ISO 9001</span>
+          <span class="cert-lbl">Certified Quality Management System &amp; Full Traceability</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== STATS ======== -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <span class="stat-num"><span class="counter" data-target="30">30</span><span class="stat-suf">+</span></span>
+      <div class="stat-lbl">Years Combined Experience</div>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num"><span class="counter" data-target="15">15</span><span class="stat-suf">%</span></span>
+      <div class="stat-lbl">Mold Life Extension Target</div>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num static">25-35<span class="stat-suf">%</span></span>
+      <div class="stat-lbl">Target Savings vs. Replacement</div>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num static">2</span>
+      <div class="stat-lbl">Production Facilities</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== WHY US ======== -->
+<section id="why">
+  <div class="why-inner">
+    <div class="reveal">
+      <div class="s-tag">Our Difference</div>
+      <h2 class="s-h2">WHY<br><span class="o">CHOOSE US</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-num">01</div>
+        <div class="why-title">Speed Without Sacrifice</div>
+        <p class="why-desc">Rapid-response service agreements reduce production lead times without compromising dimensional accuracy or surface quality. We operate with urgency — because your downtime costs real money.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">02</div>
+        <div class="why-title">Veterans, Not Generalists</div>
+        <p class="why-desc">Our founders have personally performed every service we offer — mold design, welding, machining, cleaning, and inspection. We've refined each process over decades and bring that mastery to every job.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">03</div>
+        <div class="why-title">Your Standards, Documented</div>
+        <p class="why-desc">We follow your procedures, your manuals, and your specifications to the letter. ISO 9001 compliance ensures every process is traceable, documented, and repeatable.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">04</div>
+        <div class="why-title">Proven Cost Reduction</div>
+        <p class="why-desc">Precision refurbishment and proactive maintenance save our clients 25–35% vs. full mold replacement. Better processes mean fewer defects, less scrap, and higher production yields.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">05</div>
+        <div class="why-title">24/7 Technical Support</div>
+        <p class="why-desc">Round-the-clock technical support ensures rapid issue resolution. Tailored service agreements and continuous improvement programs keep our clients running at peak performance.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-num">06</div>
+        <div class="why-title">True Partnership</div>
+        <p class="why-desc">We function as an extension of your team — managing internal mold shop operations, integrating with your workflows, and scaling capacity precisely when and how you need it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CONTACT ======== -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="s-tag">Get In Touch</div>
+      <h2 class="s-h2">LET'S WORK<br><span class="o">TOGETHER</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="cinfo reveal">
+        <div class="ci">
+          <div class="ci-ico">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span class="ci-lbl">Locations</span>
+            <div class="ci-val"><strong>Rainbow City, Alabama</strong><br>1059 Sutton Bridge Rd<br>Rainbow City, AL 35906<br><br><strong>Bahia, Brazil</strong><br>Facility address available upon request</div>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-ico">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.6 1.21h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006 6l.86-.86a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <span class="ci-lbl">Phone</span>
+            <div class="ci-val">
+              <a href="tel:7046005737">(704) 600-5737</a>
+            </div>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-ico">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <span class="ci-lbl">Email</span>
+            <div class="ci-val">
+              <a href="mailto:info@cpmandm.com">info@cpmandm.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-ico">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <span class="ci-lbl">Availability</span>
+            <div class="ci-val">24/7 Technical Support<br>Rapid Response Guarantee</div>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-ico">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+          </div>
+          <div>
+            <span class="ci-lbl">Website</span>
+            <div class="ci-val"><a href="https://cpmandm.com" target="_blank">www.cpmandm.com</a></div>
+          </div>
+        </div>
+      </div>
+      <form class="cform reveal"
+            action="https://formsubmit.co/marcorestrepo@cpmandm.com"
+            method="POST">
+
+        <!-- Formsubmit config -->
+        <input type="hidden" name="_subject"  value="New Quote Request — Crown Precision Mold &amp; Machine">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha"  value="false">
+        <input type="hidden" name="_next"     value="https://cpmandm.com">
+        <input type="hidden" name="_cc"       value="mariosloof@cpmandm.com">
+
+        <div class="form-row2">
+          <div class="fi"><input type="text"  name="First Name"  placeholder="First Name"  required></div>
+          <div class="fi"><input type="text"  name="Last Name"   placeholder="Last Name"   required></div>
+        </div>
+        <div class="fi"><input type="email" name="Email"        placeholder="Email Address" required></div>
+        <div class="fi"><input type="text"  name="Company"      placeholder="Company Name"></div>
+        <div class="fi"><input type="tel"   name="Phone"        placeholder="Phone Number"></div>
+        <div class="fi">
+          <select name="Service Needed">
+            <option value="" disabled selected>Service Needed</option>
+            <option>Mold Repair</option>
+            <option>Mold Refurbishment</option>
+            <option>Mold Cleaning</option>
+            <option>CNC Machining</option>
+            <option>Quality Inspection</option>
+            <option>Consulting &amp; Operations</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fi"><textarea name="Message" placeholder="Describe your project, timeline, or requirements..."></textarea></div>
+        <button type="submit" class="form-submit">Send Message →</button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FOOTER ======== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 Crown Precision Mold &amp; Machine, LLC &nbsp;·&nbsp; Production facilities: Rainbow City, AL + Bahia, Brazil &nbsp;·&nbsp; cpmandm.com</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ========== CUSTOM CURSOR ========== */
+const cur = document.getElementById('cur');
+const curRing = document.getElementById('cur-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+});
+(function tick() {
+  rx += (mx - rx) * 0.13;
+  ry += (my - ry) * 0.13;
+  curRing.style.left = rx + 'px';
+  curRing.style.top = ry + 'px';
+  requestAnimationFrame(tick);
+})();
+document.querySelectorAll('a,button,.svc-card,.cl-card,.why-card,.cap-row,.carousel-btn').forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-xl'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-xl'));
+});
+
+/* ========== CAPABILITIES ACCORDION ========== */
+document.querySelectorAll('.cap-item').forEach(item => {
+  const row = item.querySelector('.cap-row');
+  row.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    // Close all others
+    document.querySelectorAll('.cap-item.open').forEach(other => {
+      if (other !== item) other.classList.remove('open');
+    });
+    // Toggle this one
+    item.classList.toggle('open', !isOpen);
+  });
+});
+
+/* ========== NAV SCROLL ========== */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('stuck', window.scrollY > 60);
+}, { passive: true });
+
+/* ========== THREE.JS HERO ========== */
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  const W = canvas.offsetWidth, H = canvas.offsetHeight;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setSize(W, H);
+  renderer.setClearColor(0x000000, 0);
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x060608, 0.04);
+
+  const camera = new THREE.PerspectiveCamera(48, W / H, 0.1, 200);
+  camera.position.set(0, 0, 10);
+
+  // ── Main torus (tire mold ring) ──
+  const torGeo = new THREE.TorusGeometry(3.4, 0.9, 36, 120);
+  const torMat = new THREE.MeshBasicMaterial({
+    color: 0xff6200, wireframe: true, transparent: true, opacity: 0.14
+  });
+  const tor = new THREE.Mesh(torGeo, torMat);
+  tor.rotation.x = 1.1;
+  scene.add(tor);
+
+  // ── Inner torus ──
+  const tor2Geo = new THREE.TorusGeometry(2.0, 0.35, 20, 80);
+  const tor2Mat = new THREE.MeshBasicMaterial({
+    color: 0x00c8ff, wireframe: true, transparent: true, opacity: 0.07
+  });
+  const tor2 = new THREE.Mesh(tor2Geo, tor2Mat);
+  tor2.rotation.y = 1.2;
+  scene.add(tor2);
+
+  // ── Outer ring ──
+  const tor3Geo = new THREE.TorusGeometry(5.2, 0.12, 8, 160);
+  const tor3Mat = new THREE.MeshBasicMaterial({
+    color: 0xff6200, wireframe: true, transparent: true, opacity: 0.04
+  });
+  const tor3 = new THREE.Mesh(tor3Geo, tor3Mat);
+  tor3.rotation.x = 0.3;
+  scene.add(tor3);
+
+  // ── Icosahedron accent ──
+  const icoGeo = new THREE.IcosahedronGeometry(1.2, 1);
+  const icoMat = new THREE.MeshBasicMaterial({
+    color: 0xff6200, wireframe: true, transparent: true, opacity: 0.18
+  });
+  const ico = new THREE.Mesh(icoGeo, icoMat);
+  ico.position.set(5.5, 1.5, -2);
+  scene.add(ico);
+
+  // ── Particles ──
+  const N = 2200;
+  const pos = new Float32Array(N * 3);
+  for (let i = 0; i < N; i++) {
+    pos[i*3]   = (Math.random()-0.5) * 36;
+    pos[i*3+1] = (Math.random()-0.5) * 36;
+    pos[i*3+2] = (Math.random()-0.5) * 36;
+  }
+  const ptGeo = new THREE.BufferGeometry();
+  ptGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  const ptMat = new THREE.PointsMaterial({
+    color: 0xff6200, size: 0.045, transparent: true, opacity: 0.35
+  });
+  const pts = new THREE.Points(ptGeo, ptMat);
+  scene.add(pts);
+
+  // ── Mouse interaction ──
+  let tmx = 0, tmy = 0;
+  document.addEventListener('mousemove', e => {
+    tmx = (e.clientX / window.innerWidth  - 0.5) * 2;
+    tmy = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  let t = 0;
+  (function animate() {
+    requestAnimationFrame(animate);
+    t += 0.004;
+
+    // Camera drift
+    camera.position.x += (tmx * 0.8 - camera.position.x) * 0.03;
+    camera.position.y += (-tmy * 0.5 - camera.position.y) * 0.03;
+    camera.lookAt(0, 0, 0);
+
+    tor.rotation.z  += 0.0028;
+    tor.rotation.x   = 1.1 + Math.sin(t * 0.4) * 0.08;
+    tor2.rotation.z -= 0.004;
+    tor2.rotation.x += 0.002;
+    tor3.rotation.z += 0.001;
+    tor3.rotation.y  = Math.sin(t * 0.25) * 0.15;
+    ico.rotation.x  += 0.007;
+    ico.rotation.y  += 0.005;
+    ico.position.y   = 1.5 + Math.sin(t * 0.8) * 0.4;
+    pts.rotation.y   = t * 0.04;
+    pts.rotation.x   = t * 0.015;
+
+    renderer.render(scene, camera);
+  })();
+
+  window.addEventListener('resize', () => {
+    const w = canvas.offsetWidth, h = canvas.offsetHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  });
+})();
+
+/* ========== SCROLL REVEAL ========== */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+
+// Stagger cards
+document.querySelectorAll('.svcs-grid, .clients-grid, .why-grid').forEach(g => {
+  g.querySelectorAll('.reveal').forEach((c, i) => c.style.transitionDelay = (i * 0.07) + 's');
+});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ========== COUNTER ANIMATION ========== */
+const cObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = +el.dataset.target;
+    if (!Number.isFinite(target)) return;
+    const finalValue = el.textContent || String(target);
+    let v = 0;
+    const step = target / 55;
+    const t = setInterval(() => {
+      v += step;
+      if (v >= target) { el.textContent = finalValue; clearInterval(t); }
+      else el.textContent = Math.floor(v);
+    }, 22);
+    cObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(c => cObs.observe(c));
+
+/* ========== CAROUSEL ========== */
+(function(){
+  const track    = document.getElementById('carousel-track');
+  const slides   = track.querySelectorAll('.carousel-slide');
+  const dotsWrap = document.getElementById('car-dots');
+  const progress = document.getElementById('car-progress');
+  const curEl    = document.getElementById('car-cur');
+  const totEl    = document.getElementById('car-tot');
+  const TOTAL    = slides.length;
+  const INTERVAL = 5000;   // ms per slide
+  let current = 0;
+  let timer, progTimer;
+
+  totEl.textContent = String(TOTAL).padStart(2,'0');
+
+  /* Build dots */
+  slides.forEach((_,i) => {
+    const d = document.createElement('div');
+    d.className = 'carousel-dot' + (i===0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  });
+
+  function updateDots(){
+    dotsWrap.querySelectorAll('.carousel-dot').forEach((d,i) =>
+      d.classList.toggle('active', i === current)
+    );
+  }
+
+  function goTo(idx){
+    slides[current].classList.remove('active');
+    current = (idx + TOTAL) % TOTAL;
+    slides[current].classList.add('active');
+    track.style.transform = `translateX(-${current * 100}%)`;
+    curEl.textContent = String(current+1).padStart(2,'0');
+    updateDots();
+    resetProgress();
+  }
+
+  /* Progress bar */
+  function resetProgress(){
+    clearInterval(progTimer);
+    progress.style.transition = 'none';
+    progress.style.width = '0%';
+    // tiny frame delay so transition resets cleanly
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      progress.style.transition = `width ${INTERVAL}ms linear`;
+      progress.style.width = '100%';
+    }));
+  }
+
+  /* Auto-advance */
+  function startAuto(){ timer = setInterval(() => goTo(current+1), INTERVAL); }
+  function stopAuto(){  clearInterval(timer); }
+
+  document.getElementById('car-prev').addEventListener('click', () => {
+    stopAuto(); goTo(current-1); startAuto();
+  });
+  document.getElementById('car-next').addEventListener('click', () => {
+    stopAuto(); goTo(current+1); startAuto();
+  });
+
+  /* Pause on hover */
+  document.getElementById('carousel').addEventListener('mouseenter', stopAuto);
+  document.getElementById('carousel').addEventListener('mouseleave', startAuto);
+
+  /* Touch / swipe support */
+  let tsx = 0;
+  track.addEventListener('touchstart', e => { tsx = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - tsx;
+    if (Math.abs(dx) > 40) { stopAuto(); goTo(current + (dx < 0 ? 1 : -1)); startAuto(); }
+  });
+
+  /* Keyboard support */
+  document.addEventListener('keydown', e => {
+    if (e.key==='ArrowLeft')  { stopAuto(); goTo(current-1); startAuto(); }
+    if (e.key==='ArrowRight') { stopAuto(); goTo(current+1); startAuto(); }
+  });
+
+  /* Init */
+  resetProgress();
+  startAuto();
+})();
+
+/* ========== SERVICE CARD TILT ========== */
+document.querySelectorAll('.svc-card').forEach(c => {
+  c.addEventListener('mousemove', e => {
+    const r = c.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    c.style.transition = 'transform 0.1s,border-color 0.4s';
+    c.style.transform = `perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg)`;
+  });
+  c.addEventListener('mouseleave', () => {
+    c.style.transition = 'transform 0.55s cubic-bezier(0.22,1,0.36,1),border-color 0.4s';
+    c.style.transform = 'perspective(900px) rotateY(0) rotateX(0)';
+  });
+});
+
+/* ========== HERO PARALLAX ========== */
+const hContent = document.querySelector('.hero-content');
+document.getElementById('hero').addEventListener('mousemove', e => {
+  const r = document.getElementById('hero').getBoundingClientRect();
+  const x = (e.clientX - r.width  * 0.5) / r.width;
+  const y = (e.clientY - r.height * 0.5) / r.height;
+  hContent.style.transform = `translate(${x*12}px,${y*8}px)`;
+}, { passive: true });
+
+/* Form handled natively by Formsubmit.co */
+</script>
+</body>
+</html>
