@@ -356,6 +356,42 @@ section{padding:120px 64px;}
 
 
 
+
+
+/* ========== HOME PREVIEWS ========== */
+.home-preview,.equipment-preview{background:var(--bg1);position:relative;overflow:hidden;}
+.preview-inner{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+}
+.preview-copy p{
+  font-size:16px;line-height:1.85;color:var(--gray1);
+  font-weight:300;margin:22px 0 34px;
+}
+.preview-card{
+  background:var(--bg2);border:1px solid var(--border);
+  padding:38px;min-height:260px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.preview-card span{
+  font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;color:var(--orange);margin-bottom:16px;
+}
+.preview-card strong{
+  font-family:'Barlow Condensed',sans-serif;font-size:30px;line-height:1.2;
+  letter-spacing:2px;text-transform:uppercase;color:var(--white);
+}
+.preview-card p{font-size:15px;line-height:1.8;color:var(--gray1);margin-top:18px;}
+.equipment-mini-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+}
+.equipment-mini-grid img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  border:1px solid var(--border);background:#000;
+  filter:brightness(.78) saturate(.95);
+}
+@media(max-width:900px){.preview-inner{grid-template-columns:1fr}.equipment-mini-grid{grid-template-columns:1fr 1fr}}
+
 /* ========== PRODUCTION FOOTPRINT ========== */
 #footprint{background:var(--bg0);position:relative;overflow:hidden;}
 .footprint-inner{
@@ -893,10 +929,10 @@ footer{
     <img src="assets/logo.png" alt="Crown Precision Mold &amp; Machine" class="nav-logo-img">
   </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#footprint">Footprint</a></li>
-    <li><a href="#equipment">Equipment</a></li>
+    <li><a href="equipment.html">Equipment</a></li>
     <li><a href="#why">Why Us</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -948,69 +984,23 @@ footer{
 
 </section>
 
-<!-- ======== ABOUT ======== -->
-<section id="about">
+<!-- ======== ABOUT PREVIEW ======== -->
+<section id="about" class="home-preview">
   <div class="about-watermark">CPM</div>
-  <div class="about-inner">
-    <div class="about-text reveal">
+  <div class="preview-inner">
+    <div class="preview-copy reveal">
       <div class="s-tag">About Crown Precision</div>
-      <h2 class="s-h2">BUILT ON<br><span class="o">DECADES</span><br>OF MASTERY</h2>
-      <p>
-        Founded by industry veterans with over 30 years of combined experience, Crown Precision Mold &amp; Machine operates two production facilities: one in Rainbow City, Alabama and one in Bahia, Brazil. This footprint supports tire producers that need specialized mold service capacity across North America and Brazil.
-      </p>
-      <p>
-        Our leadership team has personally executed every process in our portfolio: mold design, CNC machining, laser welding, ultrasonic cleaning, and precision inspection. That hands-on experience helps the team follow customer procedures, identify repair risks early, and keep mold service decisions grounded in shop-floor reality.
-      </p>
-      <p>
-        Our mission is to deliver specialized mold and machinery services with documented quality, practical speed, and reliable execution for production-critical tire tooling.
-      </p>
-      <div class="about-badges">
-        <span class="abadge hi">ISO 9001 Certified</span>
-        <span class="abadge">5 Continents</span>
-        <span class="abadge">30+ Yrs Experience</span>
-        <span class="abadge">Global Reach</span>
-        <span class="abadge">24/7 Support</span>
-        <span class="abadge">Rainbow City, Alabama</span>
-        <span class="abadge">Bahia, Brazil</span>
-        <span class="abadge">Two Production Facilities</span>
-      </div>
+      <h2 class="s-h2">TWO<br><span class="o">FACILITY</span><br>MOLD SERVICE PLATFORM</h2>
+      <p>CPM&amp;M supports tire manufacturers from production facilities in Rainbow City, Alabama and Bahia, Brazil. The company focuses on mold repair, refurbishment, cleaning, machining, inspection, and production continuity support.</p>
+      <a href="about.html" class="btn-solid">Read About CPM&amp;M</a>
     </div>
-    <div class="reveal">
-      <div class="leader-card">
-        <div class="leader-card-title">Leadership Team</div>
-        <div class="founders">
-          <div class="founder">
-            <div class="f-avatar">MS</div>
-            <div>
-              <div class="f-name">Mario Sloof</div>
-              <div class="f-role">Chief Executive Officer</div>
-              <div class="f-contact">Leadership contact through main office</div>
-            </div>
-          </div>
-          <div class="founder" style="margin-top:4px;padding-top:26px;border-top:1px solid var(--border);">
-            <div class="f-avatar">MR</div>
-            <div>
-              <div class="f-name">Marco Restrepo</div>
-              <div class="f-role">Chief Operating Officer</div>
-              <div class="f-contact">Leadership contact through main office</div>
-            </div>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="values-grid">
-          <div class="val">Quality Commitment</div>
-          <div class="val">Integrity</div>
-          <div class="val">Teamwork</div>
-          <div class="val">Innovation</div>
-          <div class="val">Continuous Improvement</div>
-          <div class="val">Customer Focus</div>
-        </div>
-      </div>
+    <div class="preview-card reveal">
+      <span>Production Facilities</span>
+      <strong>Rainbow City, Alabama<br>Bahia, Brazil</strong>
+      <p>Built for regional service capacity, practical speed, and documented mold support.</p>
     </div>
   </div>
 </section>
-
-
 
 <!-- ======== PRODUCTION FOOTPRINT ======== -->
 <section id="footprint">
@@ -1033,7 +1023,7 @@ footer{
         <div class="footprint-point">
           <span>Brazil</span>
           <strong>Bahia, Brazil</strong>
-          <small>Bahia, Brazil<br>Exact facility address available upon request.</small>
+          <small>Bahia, Brazil</small>
         </div>
       </div>
     </div>
@@ -1140,34 +1130,21 @@ footer{
   </div>
 </section>
 
-<!-- ======== CAROUSEL ======== -->
-<section id="equipment">
-  <div class="carousel-wrap" id="carousel">
-
-    <div class="carousel-track" id="carousel-track">
-      <div class="carousel-slide active"><img src="assets/tire-mold-assembly-team.jpeg" alt="Tire mold assembly team at work"><span class="carousel-caption">Tire Mold Assembly</span></div>
-      <div class="carousel-slide"><img src="assets/open-tire-mold-interior.jpeg" alt="Open tire mold interior close-up"><span class="carousel-caption">Open Tire Mold Interior</span></div>
-      <div class="carousel-slide"><img src="assets/precision-machining-center.jpeg" alt="Technician operating precision machining center"><span class="carousel-caption">Precision Machining Center</span></div>
-      <div class="carousel-slide"><img src="assets/cnc-mold-components-workbench.jpeg" alt="Precision CNC mold components on workbench"><span class="carousel-caption">CNC Mold Components</span></div>
-      <div class="carousel-slide"><img src="assets/tire-mold-before-after-refurbishment.png" alt="Tire mold before and after refurbishment"><span class="carousel-caption">Before and After Refurbishment</span></div>
-      <div class="carousel-slide"><img src="assets/laser-welding-machine.png" alt="Precision laser welding machine"><span class="carousel-caption">Precision Laser Welding</span></div>
-      <div class="carousel-slide"><img src="assets/cnc-vertical-turret-lathe.png" alt="CNC vertical turret lathe"><span class="carousel-caption">CNC Vertical Turret Lathe</span></div>
-      <div class="carousel-slide"><img src="assets/fiber-laser-cleaning-system.png" alt="Fiber laser cleaning system"><span class="carousel-caption">Fiber Laser Cleaning</span></div>
+<!-- ======== EQUIPMENT PREVIEW ======== -->
+<section id="equipment" class="equipment-preview">
+  <div class="preview-inner">
+    <div class="preview-copy reveal">
+      <div class="s-tag">Equipment</div>
+      <h2 class="s-h2">FOCUSED<br><span class="o">SHOP</span><br>CAPABILITY</h2>
+      <p>See the equipment and process assets behind CPM&amp;M's tire mold repair, cleaning, welding, CNC machining, and refurbishment workflows.</p>
+      <a href="equipment.html" class="btn-solid">View Equipment Gallery</a>
     </div>
-
-    <!-- Controls -->
-    <button class="carousel-btn carousel-prev" id="car-prev" aria-label="Previous">&#8592;</button>
-    <button class="carousel-btn carousel-next" id="car-next" aria-label="Next">&#8594;</button>
-
-    <!-- Dots -->
-    <div class="carousel-dots" id="car-dots"></div>
-
-    <!-- Progress bar -->
-    <div class="carousel-progress" id="car-progress"></div>
-
-    <!-- Counter -->
-    <div class="carousel-counter"><b id="car-cur">01</b> / <span id="car-tot">08</span></div>
-
+    <div class="equipment-mini-grid reveal">
+      <img src="assets/precision-machining-center.jpeg" alt="Precision machining center">
+      <img src="assets/laser-welding-machine.png" alt="Laser welding machine">
+      <img src="assets/cnc-vertical-turret-lathe.png" alt="CNC vertical turret lathe">
+      <img src="assets/fiber-laser-cleaning-system.png" alt="Fiber laser cleaning system">
+    </div>
   </div>
 </section>
 
@@ -1388,7 +1365,7 @@ footer{
           </div>
           <div>
             <span class="ci-lbl">Locations</span>
-            <div class="ci-val"><strong>Rainbow City, Alabama</strong><br>1059 Sutton Bridge Rd<br>Rainbow City, AL 35906<br><br><strong>Bahia, Brazil</strong><br>Facility address available upon request</div>
+            <div class="ci-val"><strong>Rainbow City, Alabama</strong><br>1059 Sutton Bridge Rd<br>Rainbow City, AL 35906<br><br><strong>Bahia, Brazil</strong></div>
           </div>
         </div>
         <div class="ci">
@@ -1475,9 +1452,9 @@ footer{
   <div class="footer-inner">
     <div class="footer-copy">© 2026 Crown Precision Mold &amp; Machine, LLC &nbsp;·&nbsp; Production facilities: Rainbow City, AL + Bahia, Brazil &nbsp;·&nbsp; cpmandm.com</div>
     <div class="footer-links">
-      <a href="#about">About</a>
+      <a href="about.html">About</a>
       <a href="#services">Services</a>
-      <a href="#equipment">Equipment</a>
+      <a href="equipment.html">Equipment</a>
       <a href="#capabilities">Capabilities</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
@@ -1674,6 +1651,7 @@ document.querySelectorAll('.counter').forEach(c => cObs.observe(c));
 /* ========== CAROUSEL ========== */
 (function(){
   const track    = document.getElementById('carousel-track');
+  if (!track) return;
   const slides   = track.querySelectorAll('.carousel-slide');
   const dotsWrap = document.getElementById('car-dots');
   const progress = document.getElementById('car-progress');
