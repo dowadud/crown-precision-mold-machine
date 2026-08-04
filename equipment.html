@@ -897,6 +897,19 @@ nav{background:rgba(6,6,8,0.94);backdrop-filter:blur(24px);-webkit-backdrop-filt
 .info-panel h2,.info-panel h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:2px;color:var(--white);margin-bottom:16px;}
 .info-panel p,.info-panel li{font-size:15px;line-height:1.8;color:var(--gray1);font-weight:300;}
 .info-panel ul{padding-left:18px;}
+.technology-focus{background:linear-gradient(180deg,#101114 0%,#0b0c0f 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.technology-head{max-width:760px;margin-bottom:34px;}
+.technology-head p{font-size:16px;line-height:1.85;color:var(--gray1);font-weight:300;margin-top:18px;}
+.technology-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.technology-card{position:relative;background:#090a0c;border:1px solid rgba(255,98,0,0.18);overflow:hidden;display:flex;flex-direction:column;min-height:100%;}
+.technology-card::before{content:'';position:absolute;left:0;top:0;width:100%;height:2px;background:linear-gradient(90deg,var(--orange),transparent);opacity:.8;}
+.technology-card img{display:block;width:100%;height:320px;object-fit:contain;background:linear-gradient(135deg,#f4f4f0,#ffffff);padding:18px;box-sizing:border-box;filter:contrast(1.04) saturate(.98);}
+.technology-card.dark-media img{background:#000;}
+.technology-card-body{padding:22px;flex:1;}
+.technology-card-kicker{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+.technology-card h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:20px;color:var(--white);margin-bottom:10px;}
+.technology-card p{font-size:14px;line-height:1.72;color:var(--gray1);font-weight:300;}
+.technology-note{margin-top:18px;font-size:13px;line-height:1.7;color:var(--gray2);max-width:760px;}
 .equipment-feature{display:grid;grid-template-columns:0.9fr 1.1fr;gap:36px;align-items:center;}
 .equipment-feature-copy p{font-size:16px;line-height:1.85;color:var(--gray1);font-weight:300;margin-top:18px;}
 .equipment-video-card{background:#050506;border:1px solid var(--border);padding:12px;box-shadow:0 30px 80px rgba(0,0,0,.35);}
@@ -907,8 +920,8 @@ nav{background:rgba(6,6,8,0.94);backdrop-filter:blur(24px);-webkit-backdrop-filt
 .equipment-card div{padding:18px;flex:1;}
 .equipment-card h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:17px;color:var(--white);margin-bottom:8px;}
 .equipment-card p{font-size:14px;line-height:1.7;color:var(--gray1);}
-@media(max-width:1100px){.equipment-feature{grid-template-columns:1fr}.equipment-page-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:900px){.page-grid,.equipment-page-grid{grid-template-columns:1fr}.page-hero,.page-section{padding-left:24px;padding-right:24px}.equipment-card img{height:420px}.equipment-video-card video{max-height:560px}}
+@media(max-width:1100px){.equipment-feature{grid-template-columns:1fr}.equipment-page-grid,.technology-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.page-grid,.equipment-page-grid,.technology-grid{grid-template-columns:1fr}.page-hero,.page-section{padding-left:24px;padding-right:24px}.equipment-card img{height:420px}.technology-card img{height:280px}.equipment-video-card video{max-height:560px}}
 
 </style>
 </head>
@@ -932,6 +945,66 @@ nav{background:rgba(6,6,8,0.94);backdrop-filter:blur(24px);-webkit-backdrop-filt
     <div class="page-kicker">Equipment Gallery</div>
     <h1 class="page-title">Shop Capability<br><span>Without The Clutter</span></h1>
     <p class="page-lead">A focused look at the equipment, mold handling, cleaning, welding, machining, and refurbishment assets supporting CPM&amp;M's production facilities.</p>
+  </div>
+</section>
+<section class="page-section technology-focus">
+  <div class="page-section-inner">
+    <div class="technology-head">
+      <div class="page-kicker">Advanced Technology Focus</div>
+      <h2 class="s-h2">MODERN<br><span class="o">MACHINING</span><br>&amp; LASER CAPABILITY</h2>
+      <p>CPM&amp;M is emphasizing advanced CNC, vertical machining, robotic welding, and laser repair platforms that support faster mold turnaround, more repeatable geometry control, and higher confidence repair decisions.</p>
+    </div>
+    <div class="technology-grid">
+      <article class="technology-card">
+        <img src="assets/technology-advanced-vertical-cnc-platform.jpg" alt="Advanced vertical CNC machining platform">
+        <div class="technology-card-body">
+          <div class="technology-card-kicker">Advanced CNC</div>
+          <h3>Vertical CNC Platform</h3>
+          <p>High productivity machining capacity for precision mold components, cavity work, fixtures, and production critical repair operations.</p>
+        </div>
+      </article>
+      <article class="technology-card">
+        <img src="assets/technology-vertical-grinding-machining-platform.jpg" alt="Vertical grinding and machining platform">
+        <div class="technology-card-body">
+          <div class="technology-card-kicker">Surface Restoration</div>
+          <h3>Vertical Grinding Platform</h3>
+          <p>Modern vertical grinding and machining capability for restoring round tooling, mold surfaces, and dimensional control points.</p>
+        </div>
+      </article>
+      <article class="technology-card">
+        <img src="assets/technology-high-speed-cnc-machining-center.jpg" alt="High speed CNC machining center">
+        <div class="technology-card-body">
+          <div class="technology-card-kicker">Cycle Efficiency</div>
+          <h3>High Speed CNC Center</h3>
+          <p>Advanced machining center capability focused on faster processing, repeatability, and tighter control over mold repair workflows.</p>
+        </div>
+      </article>
+      <article class="technology-card dark-media">
+        <img src="assets/technology-large-format-cnc-cell.jpg" alt="Large format CNC machining cell">
+        <div class="technology-card-body">
+          <div class="technology-card-kicker">Large Format</div>
+          <h3>CNC Production Cell</h3>
+          <p>Large format CNC equipment supports heavier mold and tooling work where rigidity, access, and repeatable setup matter.</p>
+        </div>
+      </article>
+      <article class="technology-card">
+        <img src="assets/technology-robotic-laser-welding-platform.jpg" alt="Robotic laser welding platform">
+        <div class="technology-card-body">
+          <div class="technology-card-kicker">Laser Repair</div>
+          <h3>Robotic Laser Welding</h3>
+          <p>Robotic laser repair technology supports localized mold feature restoration with controlled heat input and repeatable weld positioning.</p>
+        </div>
+      </article>
+      <article class="technology-card dark-media">
+        <img src="assets/technology-five-axis-cnc-platform.jpg" alt="Five axis CNC machining platform">
+        <div class="technology-card-body">
+          <div class="technology-card-kicker">Complex Geometry</div>
+          <h3>5 Axis CNC Platform</h3>
+          <p>5 axis machining capability supports complex geometry, multi surface access, and more efficient handling of demanding mold components.</p>
+        </div>
+      </article>
+    </div>
+    <p class="technology-note">Exact equipment configuration, capacity, and technical fit are reviewed during customer scoping and RFQ response.</p>
   </div>
 </section>
 <section class="page-section">
